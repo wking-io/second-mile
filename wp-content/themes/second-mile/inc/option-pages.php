@@ -5,22 +5,21 @@
  * @package second-mile
  */
 
-function add_option_page( $cpt ) {
+function add_option_page( $name ) {
 	if( function_exists( 'acf_add_options_sub_page' ) ) {
 		// add sub page
 		acf_add_options_sub_page( array(
-			'page_title' 	=> $cpt . ' Settings',
-			'menu_slug'		=> strtolower( $cpt ) . '-settings',
-			'parent_slug' => 'edit.php' . ( ( 'News' === $cpt ) ? '' : '?post_type=' . strtolower( $cpt ) ),
+			'page_title' 	=> $name,
+			'menu_slug'		=> strtolower( $name ) . '-settings',
+			'parent_slug' => 'edit.php',
 		) );
 	
 	}
 }
 
 function add_option_pages() {
-	add_option_page('Team');
-	add_option_page('Testimonial');
-	add_option_page('Career');
+	add_option_page('Donation Overview');
+	add_option_page('Ministry Overviews');
 
 	if( function_exists( 'acf_add_options_page' ) ) {
 		// add sub page

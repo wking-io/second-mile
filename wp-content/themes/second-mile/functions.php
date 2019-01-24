@@ -11,9 +11,6 @@ define( 'THEME_NAME', 'secondmile' );
 // Setup
 include 'inc/setup.php';
 
-// Add custom taxonomy for portfolio projects
-include 'inc/project-tax.php';
-
 // Assets.
 include 'inc/assets.php';
 
@@ -30,7 +27,7 @@ include 'inc/option-pages.php';
 include 'inc/helpers.php';
 
 // Shortcodes
-include 'inc/shortcodes.php';
+// include 'inc/shortcodes.php';
 
 // Custom active class on menu items
 // include 'inc/custom-active-menu.php';
@@ -42,4 +39,4 @@ include 'inc/copyright.php';
 include 'inc/cloudinary.php';
 
 // Template functions for post items
-include 'inc/templates.php';
+// include 'inc/templates.php';

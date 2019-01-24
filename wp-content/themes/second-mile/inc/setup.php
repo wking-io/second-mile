@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists( 'batson_setup' ) ) :
+if ( ! function_exists( 'secondmile_setup' ) ) :
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -16,7 +16,7 @@ function secondmile_setup() {
 	 * If you're building a theme based on secondmile, use a find and replace
 	 * to change 'secondmile' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'secondmile', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'second-mile', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -102,45 +102,3 @@ function secondmile_setup() {
 endif;
 
 add_action( 'after_setup_theme', 'secondmile_setup' );
-
-function update_posts_per_page_cpt( $query ) {
-  if ( ! is_admin() && $query->is_main_query() ) {
-
-		if ( is_home() ) {
-			$first_page = 11;
-			$ppp = 10;
-			$offset = $first_page;
-			
-			if ( ! $query->is_paged() ) {
-				$query->set( 'posts_per_page', $first_page );
-			} else {
-				$offset = ( ( $query->query_vars['paged']-1 ) * $offset ) + $ppp;
-				$query->set( 'posts_per_page', $ppp );
-				$query->set( 'offset', $offset );
-			}
-		}
-
-		if ( is_post_type_archive( 'testimonial' ) || is_post_type_archive( 'team' ) ) {
-			$query->set( 'posts_per_page', '500' );
-			$ppp = 500;
-			$offset = 500;
-			
-			if ( ! $query->is_paged() ) {
-				$query->set( 'posts_per_page', $ppp );
-			} else {
-				$offset = ( ( $query->query_vars['paged']-1 ) * $offset ) + $ppp;
-				$query->set( 'posts_per_page', $ppp );
-				$query->set( 'offset', $offset );
-			}
-		}
-  }
-}
-add_action( 'pre_get_posts', 'update_posts_per_page_cpt' );
-
-add_filter('next_post_link', 'posts_link_attributes');
-add_filter('previous_post_link', 'posts_link_attributes');
-
-function posts_link_attributes( $output ) {
-		$code = 'class="button-outline-primary"';
-		return str_replace( '<a href=', '<a ' . $code . ' href=', $output );
-}
