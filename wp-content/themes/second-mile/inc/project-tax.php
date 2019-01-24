@@ -5,7 +5,7 @@
  * @package second-mile
  */
 
-function tb_register_project_tax() {
+function secondmile_register_project_tax() {
 	// Add new taxonomy, make it hierarchical (like categories)
 	$labels = array(
 		'name'              => _x( 'Project Types', 'taxonomy general name', THEME_NAME ),
@@ -33,4 +33,4 @@ function tb_register_project_tax() {
 	register_taxonomy( 'project-type', 'portfolio', $args );
 }
 
-add_action( 'init', 'tb_register_project_tax', 1 );
+add_action( 'init', 'secondmile_register_project_tax', 1 );

@@ -16,10 +16,10 @@
 				<div class="branding flex flex-col items-start justify-start lg:w-1/2 pb-3 lg:pb-0">
 					<?php echo do_shortcode( '[logo classname="w-12 mb-4 h-auto"]' ); ?>
 					<?php echo do_shortcode( '[name classname="h-4" in-color="false" ]' ); ?>
-					<p class="text-white pt-4"><?php echo tb_copyright(); ?> Second Mile Architects</p>
+					<p class="text-white pt-4"><?php echo secondmile_copyright(); ?> Second Mile Architects</p>
 				</div>
 				<div class="lg:w-1/2 py-8 lg:py-0">
-					<p class="text-white pb-6 leading-normal max-w-3xl"><?php the_field( 'tb_company_address', 'options' ) ?></p>
+					<p class="text-white pb-6 leading-normal max-w-3xl"><?php the_field( 'secondmile_company_address', 'options' ) ?></p>
 					<?php if ( is_active_sidebar( 'social-widget-area' ) ) : ?>
 							<?php dynamic_sidebar( 'social-widget-area' ); ?>
 					<?php endif; ?>

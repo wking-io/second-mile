@@ -6,7 +6,7 @@ global $wp_query;
 $current_page = $wp_query->get( 'paged' ) ? $wp_query->get( 'paged' ) : 1;
 $is_last_page = $wp_query->max_num_pages == $current_page;
 
-$tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_terms('project-type'), 'name', 'slug' ) );
+$secondmile_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_terms('project-type'), 'name', 'slug' ) );
 
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 
@@ -16,7 +16,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
   <div class="flex flex-col md:flex-row items-center wrapper pb-8">
     <h2 class="uppercase text-2xl mb-4 md:mb-0">Portfolio</h2>
     <ul class="flex-1 list-reset flex flex-wrap md:flex-no-wrap justify-center md:justify-end items-center">
-      <?php foreach( $tb_project_categories as $slug => $name ) : 
+      <?php foreach( $secondmile_project_categories as $slug => $name ) : 
         $path = 'all' === $slug ? 'portfolio#projects' : 'portfolio/type/' . $slug . '#projects'; ?>
         <?php if ( $term->slug === $slug ) : ?>
           <li class="font-bold mx-3 mb-2 md:mx-0 md:px-3 lg:px-6 py-2 lg:py-3 border-b-2 md:border border-primary text-sm lg:text-base"><?php echo $name; ?></li>

@@ -34,9 +34,9 @@ function secondmile_tagline_shortcode( $atts = array() ) {
 	return implode( ' ', $words );
 }
 
-add_shortcode( 'logo', 'tb_logo_shortcode');
+add_shortcode( 'logo', 'secondmile_logo_shortcode');
 
-function tb_logo_shortcode( $atts = array() ) {
+function secondmile_logo_shortcode( $atts = array() ) {
 
 	$a = shortcode_atts( array(
 		'classname' => 'w-8',
@@ -58,9 +58,9 @@ function tb_logo_shortcode( $atts = array() ) {
 	<?php return ob_get_clean();
 }
 
-add_shortcode( 'name', 'tb_name_shortcode');
+add_shortcode( 'name', 'secondmile_name_shortcode');
 
-function tb_name_shortcode( $atts = array() ) {
+function secondmile_name_shortcode( $atts = array() ) {
 	$a = shortcode_atts( array(
 		'classname' => 'h-2',
 		'in-color' => 'false',
@@ -79,9 +79,9 @@ function tb_name_shortcode( $atts = array() ) {
 	<?php return ob_get_clean();
 }
 
-add_shortcode( 'slider_nav', 'tb_slider_nav_shortcode');
+add_shortcode( 'slider_nav', 'secondmile_slider_nav_shortcode');
 
-function tb_slider_nav_shortcode( $atts = array() ) {
+function secondmile_slider_nav_shortcode( $atts = array() ) {
 	$a = shortcode_atts( array(
 		'large' => 'false',
 		'type' => 'prev',
@@ -105,9 +105,9 @@ function tb_slider_nav_shortcode( $atts = array() ) {
 	<?php return ob_get_clean();
 }
 
-add_shortcode( 'loader', 'tb_loader_shortcode');
+add_shortcode( 'loader', 'secondmile_loader_shortcode');
 
-function tb_loader_shortcode( $atts = array() ) {
+function secondmile_loader_shortcode( $atts = array() ) {
 	$a = shortcode_atts( array(
 		'dark' => 'false',
 	), $atts );

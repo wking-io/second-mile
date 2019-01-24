@@ -4,7 +4,7 @@
  * Get template for post based on post type
  * 
  */
-function tb_get_template( $post_type = '' ) {
+function secondmile_get_template( $post_type = '' ) {
   $markup = '';
   if ( ! empty( $post_type ) ) {
     switch ( $post_type ) {
@@ -32,14 +32,14 @@ function tb_get_template( $post_type = '' ) {
  * Javascript for Load More
  *
  */
-function tb_load_more_portfolio_js() {
+function secondmile_load_more_portfolio_js() {
 
   global $wp_query;
 	$args = array(
 		'nonce' => wp_create_nonce( 'tb-load-more-nonce' ),
 		'url'   => admin_url( 'admin-ajax.php' ),
     'query' => $wp_query->query,
-    'action' => 'tb_ajax_load_more',
+    'action' => 'secondmile_ajax_load_more',
   );
   
   wp_localize_script( 'portfolio', 'loadmore', $args );
@@ -48,13 +48,13 @@ function tb_load_more_portfolio_js() {
   wp_localize_script( 'testimonial', 'loadmore', $args );
 	
 }
-add_action( 'wp_enqueue_scripts', 'tb_load_more_portfolio_js' );
+add_action( 'wp_enqueue_scripts', 'secondmile_load_more_portfolio_js' );
 
 /**
  * AJAX Load More 
  *
  */
-function tb_ajax_load_more() {
+function secondmile_ajax_load_more() {
 	check_ajax_referer( 'tb-load-more-nonce', 'nonce' );
   $args = isset( $_POST['query'] ) ? $_POST['query'] : array();
   $args['post_type'] = isset( $args['post_type'] ) ? $args['post_type'] : 'post';
@@ -70,7 +70,7 @@ function tb_ajax_load_more() {
   ob_start();
   $loop = new WP_Query( $args );
 	if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
-  echo tb_get_template( $args['post_type'] );
+  echo secondmile_get_template( $args['post_type'] );
   endwhile; endif; wp_reset_postdata();
   $markup = ob_get_clean();
 
@@ -88,5 +88,5 @@ function tb_ajax_load_more() {
   // Send it back to JS
 	wp_send_json_success(  $data );
 }
-add_action( 'wp_ajax_tb_ajax_load_more', 'tb_ajax_load_more' );
-add_action( 'wp_ajax_nopriv_tb_ajax_load_more', 'tb_ajax_load_more' );
+add_action( 'wp_ajax_secondmile_ajax_load_more', 'secondmile_ajax_load_more' );
+add_action( 'wp_ajax_nopriv_secondmile_ajax_load_more', 'secondmile_ajax_load_more' );

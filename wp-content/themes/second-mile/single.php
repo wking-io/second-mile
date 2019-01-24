@@ -1,11 +1,11 @@
 <?php
 
-$author_id = get_field( 'tb_news_author' );
+$author_id = get_field( 'secondmile_news_author' );
 $author_name = get_the_title( $author_id );
-$author_title = get_field( 'tb_team_role', $author_id );
+$author_title = get_field( 'secondmile_team_role', $author_id );
 $date = get_the_date( 'F j, Y' );
-$tb_content = get_field( 'tb_news_content' );
-$tb_gallery = get_field( 'tb_news_gallery' );
+$secondmile_content = get_field( 'secondmile_news_content' );
+$secondmile_gallery = get_field( 'secondmile_news_gallery' );
 
 get_header();
   while ( have_posts() ) : the_post(); ?>
@@ -32,16 +32,16 @@ get_header();
         </div>
         <div data-slider="news">
           <div class="general-content">
-            <?php echo $tb_content; ?>
+            <?php echo $secondmile_content; ?>
           </div>
-          <?php if ( ! empty( $tb_gallery ) ) : ?>
+          <?php if ( ! empty( $secondmile_gallery ) ) : ?>
             <div class="relative py-6">
               <div class="absolute py-6 pin-t pin-r lg:pin-l z-20">
                 <?php echo do_shortcode( '[slider_nav type="prev"]' ); ?>
                 <?php echo do_shortcode( '[slider_nav type="next"]' ); ?>
               </div>
               <ul class="list-reset news-slider slider">
-                <?php foreach( $tb_gallery as $image ) : ?>
+                <?php foreach( $secondmile_gallery as $image ) : ?>
                   <li class="h-full" style="background-image: url('<?php echo $image['url']; ?>')"><img class="h-full" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"/></li>
                 <?php endforeach; ?>
               </ul>

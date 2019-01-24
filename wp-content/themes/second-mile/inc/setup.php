@@ -63,7 +63,7 @@ function secondmile_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	function tb_widgets_init() {
+	function secondmile_widgets_init() {
 
     register_sidebar( array(
 			'name'          => esc_html__( 'Sidebar', THEME_NAME ),
@@ -96,7 +96,7 @@ function secondmile_setup() {
 		) );
 	}
 
-	add_action( 'widgets_init', 'tb_widgets_init' );
+	add_action( 'widgets_init', 'secondmile_widgets_init' );
 }
 
 endif;

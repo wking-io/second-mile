@@ -3,22 +3,22 @@
 get_header();
 
 // DATA
-$tb_featured_projects = get_field( 'tb_portfolio_slider' );
-$tb_purpose_heading_one = get_field( 'tb_purpose_heading_one' );
-$tb_purpose_heading_two = get_field( 'tb_purpose_heading_two' );
-$tb_show_purpose_video = get_field( 'tb_show_purpose_video' );
-$tb_purpose_video = get_field( 'tb_purpose_video' );
-$tb_purpose_video_poster = get_field( 'tb_purpose_video_poster' );
-$tb_purpose_description = get_field( 'tb_purpose_description' );
-$tb_purpose_button_text = get_field( 'tb_purpose_button_text' );
-$tb_purpose_button_link = get_field( 'tb_purpose_button_link' );
-$tb_culture_bg_images = get_field( 'tb_culture_bg_images' );
-$random_index = array_rand($tb_culture_bg_images);
-$tb_culture_bg = $tb_culture_bg_images[$random_index];
-$tb_culture_button_text =get_field( 'tb_culture_button_text' );
-$tb_culture_button_link =get_field( 'tb_culture_button_link' );
-$tb_culture_testimonial = get_field( 'tb_culture_testimonial' );
-$tb_latest_news = new WP_Query( array(
+$secondmile_featured_projects = get_field( 'secondmile_portfolio_slider' );
+$secondmile_purpose_heading_one = get_field( 'secondmile_purpose_heading_one' );
+$secondmile_purpose_heading_two = get_field( 'secondmile_purpose_heading_two' );
+$secondmile_show_purpose_video = get_field( 'secondmile_show_purpose_video' );
+$secondmile_purpose_video = get_field( 'secondmile_purpose_video' );
+$secondmile_purpose_video_poster = get_field( 'secondmile_purpose_video_poster' );
+$secondmile_purpose_description = get_field( 'secondmile_purpose_description' );
+$secondmile_purpose_button_text = get_field( 'secondmile_purpose_button_text' );
+$secondmile_purpose_button_link = get_field( 'secondmile_purpose_button_link' );
+$secondmile_culture_bg_images = get_field( 'secondmile_culture_bg_images' );
+$random_index = array_rand($secondmile_culture_bg_images);
+$secondmile_culture_bg = $secondmile_culture_bg_images[$random_index];
+$secondmile_culture_button_text =get_field( 'secondmile_culture_button_text' );
+$secondmile_culture_button_link =get_field( 'secondmile_culture_button_link' );
+$secondmile_culture_testimonial = get_field( 'secondmile_culture_testimonial' );
+$secondmile_latest_news = new WP_Query( array(
     'post_type' => 'post',
     'post_status' => 'publish',
     'posts_per_page' => 5,
@@ -31,8 +31,8 @@ $tb_latest_news = new WP_Query( array(
 
 <section id="hero" class="relative h-screen" data-initializing="true" data-slider="home">
   <ul id="featured-project-slider" class="featured-project-slider slider list-reset h-full">
-    <?php foreach( $tb_featured_projects as $i => $project ) : ?>
-      <li class="h-full w-screen bg-center bg-cover bg-no-repeat relative" style="background-image: url(<?php the_field( 'tb_project_featured_img', $project['project']); ?>); ?>"><a href="<?php echo get_the_permalink( $project['project'] ); ?>" class="absolute pin"></a></li>
+    <?php foreach( $secondmile_featured_projects as $i => $project ) : ?>
+      <li class="h-full w-screen bg-center bg-cover bg-no-repeat relative" style="background-image: url(<?php the_field( 'secondmile_project_featured_img', $project['project']); ?>); ?>"><a href="<?php echo get_the_permalink( $project['project'] ); ?>" class="absolute pin"></a></li>
     <?php endforeach; ?>
   </ul>
   <div class="absolute pin-b pin-l pin-r z-30">
@@ -45,8 +45,8 @@ $tb_latest_news = new WP_Query( array(
         <?php echo do_shortcode( '[name classname="h-4 md:h-6 lg:h-4 xl:h-6 branding-name" in-color="true" ]' ); ?>
       </div>
       <ul class="featured-project-slider-nav-items flex justify-between lg:justify-end items-center flex-1 list-reset relative w-full lg:w-auto lg:ml-8">
-        <?php if ( ! empty( $tb_featured_projects ) ) :
-          foreach ( $tb_featured_projects as $i => $project ) : ?>
+        <?php if ( ! empty( $secondmile_featured_projects ) ) :
+          foreach ( $secondmile_featured_projects as $i => $project ) : ?>
             <li class="<?php echo $i !== 0 ? 'absolute ml-0 md:ml-4 lg:ml-8 lg:pl-2' : 'static'; ?> md:static pin-b pin-l w-full md:w-1/3 lg:w-auto flex items-center opacity-0 md:opacity-100 featured-project-slider-nav-item">
               <div class="featured-project-slider-indicator relative h-full pr-4 md:pr-3 lg:pr-4">
                 <span class="bg-primary block h-full"></span>
@@ -74,10 +74,10 @@ $tb_latest_news = new WP_Query( array(
   <span class="purpose-box hidden lg:block" data-grow-x data-grow-buffer="0.5"></span>
   <div class="purpose-content flex flex-col lg:flex-row justify-between items-center">
     <div class="purpose-video overflow-hidden relative w-full lg:ml-jumbo lg:w-1/2 aspect-4:3">
-      <?php if ( $tb_show_purpose_video ) : ?>
+      <?php if ( $secondmile_show_purpose_video ) : ?>
         <div class="hidden md:block">
           <?php 
-            echo cl_video_tag( $tb_purpose_video, 
+            echo cl_video_tag( $secondmile_purpose_video, 
               array(
                 "loop" => true,
                 "autoplay" => true,
@@ -91,12 +91,12 @@ $tb_latest_news = new WP_Query( array(
           ?>
         </div>
         <?php endif; ?>
-      <img class="absolute pin-t pin-l object-cover w-full h-full<?php echo $tb_show_purpose_video ? ' md:hidden' : ''; ?>" src="<?php echo $tb_purpose_video_poster; ?>" alt="Video Fallback">
+      <img class="absolute pin-t pin-l object-cover w-full h-full<?php echo $secondmile_show_purpose_video ? ' md:hidden' : ''; ?>" src="<?php echo $secondmile_purpose_video_poster; ?>" alt="Video Fallback">
     </div>
     <div class="p-8 pb-0 lg:pb-8 w-full lg:w-2/5">
-      <h2 class="purpose-heading uppercase text-primary mb-6"><span class="text-black block"><?php echo $tb_purpose_heading_one; ?></span> <?php echo $tb_purpose_heading_two; ?></h2>
-      <div class="leading-normal mb-8"><?php echo $tb_purpose_description; ?></div>
-      <a href="<?php echo $tb_purpose_button_link; ?>" class="button-outline-dark"><?php echo $tb_purpose_button_text; ?></a>
+      <h2 class="purpose-heading uppercase text-primary mb-6"><span class="text-black block"><?php echo $secondmile_purpose_heading_one; ?></span> <?php echo $secondmile_purpose_heading_two; ?></h2>
+      <div class="leading-normal mb-8"><?php echo $secondmile_purpose_description; ?></div>
+      <a href="<?php echo $secondmile_purpose_button_link; ?>" class="button-outline-dark"><?php echo $secondmile_purpose_button_text; ?></a>
     </div>
   </div>
   <div class="mx-8 culture-accent relative z-30"><div class="w-1 h-full bg-primary lg:absolute lg:pin-t lg:pin-r" data-grow-y data-grow-buffer="0.05"></div></div>
@@ -104,16 +104,16 @@ $tb_latest_news = new WP_Query( array(
 
 <section id="culture" class="lg:overflow-hidden">
   <div class="relative">
-    <div class="culture-bg bg-cover lg:bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.15), rgba(63, 66, 67, 0.05)), url(<?php echo $tb_culture_bg['url']; ?>);">
+    <div class="culture-bg bg-cover lg:bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.15), rgba(63, 66, 67, 0.05)), url(<?php echo $secondmile_culture_bg['url']; ?>);">
       <div class="culture-info xl:ml-8 xl:pl-8">
         <h2 class="culture-tagline text-white mb-6 uppercase"><?php echo do_shortcode( '[tagline theme="stack"]' ); ?></h2>
-        <a href="<?php echo $tb_culture_button_link; ?>" class="button"><?php echo $tb_culture_button_text; ?></a>
+        <a href="<?php echo $secondmile_culture_button_link; ?>" class="button"><?php echo $secondmile_culture_button_text; ?></a>
       </div>
     </div>
     <figure class="culture-testimonial p-8 lg:mr-8 lg:w-3/5 lg:absolute lg:text-right pin-r pin-b">
-      <blockquote class="leading-normal font-medium text-md lg:text-lg mb-6 lg:mb-1 lg:text-white ">"<?php echo $tb_culture_testimonial->post_content; ?>"</blockquote>
+      <blockquote class="leading-normal font-medium text-md lg:text-lg mb-6 lg:mb-1 lg:text-white ">"<?php echo $secondmile_culture_testimonial->post_content; ?>"</blockquote>
       <footer>
-        <cite class="leading-normal roman lg:text-white"><?php echo $tb_culture_testimonial->post_title; ?></cite>
+        <cite class="leading-normal roman lg:text-white"><?php echo $secondmile_culture_testimonial->post_title; ?></cite>
       </footer>
     </figure>
   </div>
@@ -134,8 +134,8 @@ $tb_latest_news = new WP_Query( array(
     <?php
 
     // The Loop
-    if ( $tb_latest_news->have_posts() ) : 
-      while ( $tb_latest_news->have_posts() ) : $tb_latest_news->the_post(); ?>
+    if ( $secondmile_latest_news->have_posts() ) : 
+      while ( $secondmile_latest_news->have_posts() ) : $secondmile_latest_news->the_post(); ?>
         <a class="text-black no-underline hover:underline" href="<?php the_permalink(); ?>">
           <div class="flex flex-col pb-8 md:p-0">
             <div class="aspect-5:3 w-full bg-cover bg-center bg-no-repeat" style="background-image: url(<?php the_post_thumbnail_url( 'medium_large' ); ?>);">

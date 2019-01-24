@@ -9,10 +9,6 @@
  * @package second-mile
  */
 
-$post_type = get_post_type();
-$culture = is_page( 'culture' ) ? ' culture' : '';
-$connect = is_page( 'connect' ) ? ' connect' : '';
-
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +26,7 @@ $connect = is_page( 'connect' ) ? ' connect' : '';
 		<?php wp_head(); ?>
 	</head>
 
-<body <?php body_class('font-sans text-black' . $culture . $connect ); ?>>
+<body <?php body_class( 'font-sans text-black' ); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
 	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50 pointer-events-none" role="banner">
@@ -52,7 +48,7 @@ $connect = is_page( 'connect' ) ? ' connect' : '';
 			<div class="menu-wrapper flex flex-col justify-end items-center fixed pin z-30 bg-black p-6 overflow-hidden w-screen">
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-main', 'menu_id' => 'primary-menu', 'menu_class' => 'list-reset flex flex-col justify-end items-between flex-wrap menu-item-list w-full p-8 pb-4 sm:pb-8 m-0', 'container' => false ) ); ?>
 				<div class="menu-aside flex items-center w-full text-white py-4 px-8 sm:p-8 m-0">
-					<p class="leading-none flex-no-shrink font-medium hidden lg:block lg:w-1/2 mr-2"><?php the_field('tb_company_address', 'options' ); ?></p>
+					<p class="leading-none flex-no-shrink font-medium hidden lg:block lg:w-1/2 mr-2"><?php the_field('secondmile_company_address', 'options' ); ?></p>
 					<p class="menu-tagline uppercase fixed lg:static font-medium leading-none mr-8 flex-1">People. Passion. Purpose</p>
 					<?php if ( is_active_sidebar( 'social-widget-area' ) ) {
 						dynamic_sidebar( 'social-widget-area' );

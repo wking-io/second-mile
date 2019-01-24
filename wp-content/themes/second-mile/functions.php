@@ -18,7 +18,7 @@ include 'inc/project-tax.php';
 include 'inc/assets.php';
 
 // Changing posts to news
-include 'inc/post-to-news.php';
+include 'inc/post-to-ministries.php';
 
 // Disable Comments.
 include 'inc/remove-comments.php';
@@ -33,7 +33,7 @@ include 'inc/helpers.php';
 include 'inc/shortcodes.php';
 
 // Custom active class on menu items
-include 'inc/custom-active-menu.php';
+// include 'inc/custom-active-menu.php';
 
 // Auto copyright
 include 'inc/copyright.php';
@@ -43,6 +43,3 @@ include 'inc/cloudinary.php';
 
 // Template functions for post items
 include 'inc/templates.php';
-
-// Infinite scroll functions
-include 'inc/infinite.php';
