@@ -44,11 +44,12 @@ const defaultConfig = require('tailwindcss/defaultConfig')();
 
 const colors = {
   transparent: 'transparent',
-  black: '#3F4243',
-  grey: '#CBCCCD',
+  black: '#273444',
+  grey: '#C9CCD0',
   white: '#ffffff',
-  primary: '#DA291C',
-  'primary-dark': '#AE231E',
+  red: '#ED3E37',
+  green: '#16A9A9',
+  yellow: '#F9A02D',
 };
 
 module.exports = {
@@ -112,8 +113,8 @@ module.exports = {
   */
 
   fonts: {
-    sans: [
-      'Avenir',
+    display: [
+      'League Spartan',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
@@ -125,6 +126,33 @@ module.exports = {
       'Droid Sans',
       'Helvetica Neue',
       'sans-serif',
+    ],
+    sans: [
+      'Century Gothic',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      'sans-serif',
+    ],
+    serif: [
+      'Libre Baskerville',
+      'Constantia',
+      'Lucida Bright',
+      'Lucidabright',
+      'Lucida Serif',
+      'Lucida',
+      'DejaVu Serif',
+      'Bitstream Vera Serif',
+      'Liberation Serif',
+      'Georgia',
+      'serif',
     ],
   },
 
@@ -176,8 +204,6 @@ module.exports = {
 
   fontWeights: {
     normal: 'normal',
-    medium: 500,
-    semibold: 600,
     bold: 'bold',
   },
 
@@ -213,7 +239,6 @@ module.exports = {
   */
 
   tracking: {
-    tight: '-0.05em',
     normal: '0',
     wide: '0.05em',
   },
