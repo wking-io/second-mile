@@ -1,0 +1,17 @@
+.nav {
+  height: 3.5rem;
+}
+
+.menu-wrapper {
+  @apply opacity-0;
+  z-index: -1;
+  transform: translateX(100%);
+}
+
+[data-menu-open="true"] {
+  & .menu-wrapper {
+    @apply z-30;
+    opacity: 0.98;
+    transform: translateX(0);
+  }
+}

@@ -20,7 +20,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 
-		<?php if ( is_page( 'connect' ) ) {
+		<?php if ( is_page( 'contact' ) ) {
 			gravity_form_enqueue_scripts( 1, false );
 		} ?>
 		<?php wp_head(); ?>
@@ -29,30 +29,33 @@
 <body <?php body_class( 'font-sans text-black' ); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
-	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50 pointer-events-none" role="banner">
-		<h1 class="branding relative z-50">
-			<div class="flex items-center">
-				<a class="h-8 w-8" href="<?php echo home_url(); ?>"><?php echo do_shortcode( '[logo classname="w-full h-full"]' ); ?></a>
-				<button class="page-name ml-2 text-base md:text-md uppercase font-medium name-toggle<?php echo is_front_page() ? ' opacity-0' : ''; ?>" aria-expanded="false" style="pointer-events: <?php echo is_front_page() ? 'none' : 'auto'; ?>"><?php echo get_page_name( $post_type ); ?></button>
-			</div>
+	<header id="masthead" class="w-full flex justify-between items-center fixed px-6 py-4 z-50 pointer-events-none" role="banner" data-menu-open="false">
+		<h1 class="branding relative z-50 h-6">
+			<a class="flex items-center h-full" href="<?php echo home_url(); ?>">
+				<?php echo do_shortcode( '[logo classname="h-full mr-6" color="' . get_page_color() . '"]' ); ?>
+				<?php echo do_shortcode( '[name classname="h-4"]' ); ?>
+			</a>
 		</h1>
 
 		<nav class="nav pointer-events-auto" role="navigation">
-			<button class="menu-toggle z-40 w-6 relative cursor-pointer" aria-expanded="false">
+			<button class="menu-toggle z-40 w-6 relative cursor-pointer" aria-expanded="false" aria-controls="masthead">
 				<span></span>
 				<span></span>
 				<span></span>
 				<span></span>
 			</button>
 		
-			<div class="menu-wrapper flex flex-col justify-end items-center fixed pin z-30 bg-black p-6 overflow-hidden w-screen">
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-main', 'menu_id' => 'primary-menu', 'menu_class' => 'list-reset flex flex-col justify-end items-between flex-wrap menu-item-list w-full p-8 pb-4 sm:pb-8 m-0', 'container' => false ) ); ?>
+			<div class="menu-wrapper flex flex-col justify-end items-center fixed pin z-30 bg-black p-6 overflow-hidden w-screen text-white">
+				<?php wp_nav_menu( array(
+					'theme_location' => 'menu-main',
+					'menu_id' => 'primary-menu',
+					'menu_class' => 'list-reset flex flex-col justify-end items-between flex-wrap menu-item-list w-full p-8 pb-4 sm:pb-8 m-0',
+					'container' => false,
+					'walker'
+				) ); ?>
 				<div class="menu-aside flex items-center w-full text-white py-4 px-8 sm:p-8 m-0">
-					<p class="leading-none flex-no-shrink font-medium hidden lg:block lg:w-1/2 mr-2"><?php the_field('secondmile_company_address', 'options' ); ?></p>
-					<p class="menu-tagline uppercase fixed lg:static font-medium leading-none mr-8 flex-1">People. Passion. Purpose</p>
-					<?php if ( is_active_sidebar( 'social-widget-area' ) ) {
-						dynamic_sidebar( 'social-widget-area' );
-					} ?>
+					<p class=""><?php the_field('company_verse_text', 'options' ); ?></p>
+					<p class=""><strong><?php the_field('company_verse_location', 'options' ); ?></strong></p>
 				</div>
 			</div>
 

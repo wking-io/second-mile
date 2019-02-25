@@ -12,4 +12,4 @@ export const flipAttr = (attr, el) =>
 
 export const toggleAttr = (attr, el) => setAttr(attr, flipAttr(attr, el), el);
 
-export const attrToBool = (el, attr) => el.getAttribute(attr) === 'true';
+export const attrToBool = (attr, el) => el.getAttribute(attr) === 'true';

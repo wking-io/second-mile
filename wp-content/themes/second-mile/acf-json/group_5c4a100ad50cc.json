@@ -3,6 +3,22 @@
     "title": "OPTIONS \/\/ Company",
     "fields": [
         {
+            "key": "field_5c717d9013363",
+            "label": "Facebook Page",
+            "name": "company_facebook_page",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_5c4b28ecb45e8",
             "label": "Address",
             "name": "company_address",
@@ -39,6 +55,44 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5c717629ad4ed",
+            "label": "Verse Text",
+            "name": "company_verse_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "And if one forces you to go one mile, go with him two miles.",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5c717690ad4ee",
+            "label": "Verse Book Chapter Verse",
+            "name": "company_verse_location",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Matt. 5:41",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -58,5 +112,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1548429592
+    "modified": 1550941659
 }
