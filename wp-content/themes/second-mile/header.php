@@ -29,7 +29,7 @@
 <body <?php body_class( 'font-sans text-black' ); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
-	<header id="masthead" class="w-full flex justify-between items-center fixed px-6 py-4 z-50 pointer-events-none" role="banner" data-menu-open="false">
+	<header id="masthead" class="w-full flex justify-between items-center fixed px-6 py-4 z-50" role="banner" data-menu-open="false">
 		<h1 class="branding relative z-50 h-6">
 			<a class="flex items-center h-full" href="<?php echo home_url(); ?>">
 				<?php echo do_shortcode( '[logo classname="h-full mr-6" color="' . get_page_color() . '"]' ); ?>
@@ -37,25 +37,25 @@
 			</a>
 		</h1>
 
-		<nav class="nav pointer-events-auto" role="navigation">
-			<button class="menu-toggle z-40 w-6 relative cursor-pointer" aria-expanded="false" aria-controls="masthead">
+		<nav class="nav z-50" role="navigation">
+			<button class="menu-toggle z-40 w-6 relative cursor-pointer lg:hidden" aria-expanded="false" aria-controls="masthead">
 				<span></span>
 				<span></span>
 				<span></span>
 				<span></span>
 			</button>
 		
-			<div class="menu-wrapper flex flex-col justify-end items-center fixed pin z-30 bg-black p-6 overflow-hidden w-screen text-white">
+			<div class="menu-wrapper w-full flex flex-col lg:flex-row justify-end items-center fixed lg:static pin z-30 bg-black lg:bg-transparent p-8 lg:p-0 overflow-hidden lg:overflow-visible text-white lg:text-black text-right opacity-0 lg:opacity-100">
 				<?php wp_nav_menu( array(
 					'theme_location' => 'menu-main',
 					'menu_id' => 'primary-menu',
-					'menu_class' => 'list-reset flex flex-col justify-end items-between flex-wrap menu-item-list w-full p-8 pb-4 sm:pb-8 m-0',
+					'menu_class' => 'list-reset flex flex-col lg:flex-row justify-center lg:justify-end items-between lg:items-center menu-item-list w-full h-full lg:h-auto p-4 sm:p-6 lg:p-0 m-0',
 					'container' => false,
 					'walker'
 				) ); ?>
-				<div class="menu-aside flex items-center w-full text-white py-4 px-8 sm:p-8 m-0">
-					<p class=""><?php the_field('company_verse_text', 'options' ); ?></p>
-					<p class=""><strong><?php the_field('company_verse_location', 'options' ); ?></strong></p>
+				<div class="menu-aside w-full text-white p-4 sm:p-6 m-0 lg:hidden">
+					<p class="mb-4 leading-normal"><?php the_field('company_verse_text', 'options' ); ?></p>
+					<p class="m-0"><strong><?php the_field('company_verse_location', 'options' ); ?></strong></p>
 				</div>
 			</div>
 
