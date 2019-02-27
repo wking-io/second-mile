@@ -1,5 +1,6 @@
 .header {
   @apply px-6 py-4;
+  background-color: $white;
 }
 
 .logo-name__fill {
@@ -35,7 +36,16 @@
   padding: 0 0 10rem 0;
 }
 
-.menu-item > a {
+.menu-item .dropdown-icon {
+  display: none;
+  fill: $black;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 2rem;
+}
+
+.menu-item > a,
+.menu-item > span {
   color: $white;
   text-decoration: none;
   cursor: pointer;
@@ -89,13 +99,6 @@
   }
 }
 
-[data-style='basic'] {
-}
-
-.logo-name__fill {
-  fill: $black;
-}
-
 [data-style='border'] {
   .logo-name__fill {
     fill: $black;
@@ -107,6 +110,34 @@
   .contact-icon__fill,
   .logo-name__fill {
     fill: $white;
+  }
+
+  .menu-toggle span {
+    background-color: $white;
+  }
+
+  &[data-theme='green'] {
+    .header {
+      background-color: $green;
+    }
+  }
+  
+  &[data-theme='yellow'] {
+    .header {
+      background-color: $yellow;
+    }
+  }
+  
+  &[data-theme='red'] {
+    .header {
+      background-color: $red;
+    }
+  }
+  
+  &[data-theme='white'] {
+    .header {
+      background-color: $black;
+    }
   }
 }
 
@@ -157,7 +188,12 @@
     width: calc(10vw - 5rem);
   }
 
-  .menu-item > a {
+  .menu-item .dropdown-icon {
+    display: initial;
+  }
+
+  .menu-item > a,
+  .menu-item > span {
     color: $black;
   }
 
@@ -226,9 +262,14 @@
   }
 
   [data-style='background'] {
-    .menu-item > a {
+    .menu-item > a,
+    .menu-item > span {
       color: $white;
     }
+
+    .menu-item .dropdown-icon {
+      fill: $white;
+    }    
 
     .menu-item--cta > a {
       background-color: $white;
@@ -240,7 +281,7 @@
       background-color: $black;
     }
 
-    [data-theme='green'] {
+    &[data-theme='green'] {
       .menu-item--cta > a {
         color: $green;
       }
@@ -250,7 +291,7 @@
       }
     }
 
-    [data-theme='yellow'] {
+    &[data-theme='yellow'] {
       .menu-item--cta > a {
         color: $yellow;
       }
@@ -260,7 +301,7 @@
       }
     }
 
-    [data-theme='red'] {
+    &[data-theme='red'] {
       .menu-item--cta > a {
         color: $red;
       }
@@ -270,7 +311,7 @@
       }
     }
 
-    [data-theme='white'] {
+    &[data-theme='white'] {
       .sub-menu {
         background-color: $white;
         box-shadow: 0.5rem 1rem 5rem rgba($black, 0.3);

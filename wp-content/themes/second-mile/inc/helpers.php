@@ -48,8 +48,5 @@ function secondmile_page_attributes() {
     $style = 'border';
   endif;
 
-  error_log( print_r( $theme, true ) );
-  error_log( print_r( $style, true ) );
-
   return 'data-theme="' . $theme . '" data-style="' . $style . '"';
 }

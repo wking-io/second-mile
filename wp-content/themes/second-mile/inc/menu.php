@@ -31,3 +31,38 @@ function update_contact_menu_item( $items, $args ) {
 }
 
 add_filter('wp_nav_menu_objects', 'update_contact_menu_item', 10, 2);
+
+class Primary_Menu extends Walker_Nav_Menu {
+	function start_el(&$output, $item, $depth = 0 , $args=array(), $id = 0 ) {
+
+    $id = $item->ID;
+		$title = $item->title;
+    $permalink = $item->url;
+    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        
+    $output .= '<li id="menu-item-' . esc_attr( $id ) . '" class="' . implode(" ", $classes) . '">';
+
+		if ( $permalink && '#' != $permalink ) :
+			$output .= '<a id="menu-item-' . esc_attr( $id ) . '-link" href="' . esc_attr( $permalink ) . '">';
+		else :
+      $output .= '<span>';
+    endif;
+		
+		$output .= $title;
+
+		if( $permalink && '#' != $permalink ) :
+			$output .= '</a>';
+		else :
+			$output .= '</span>';
+        endif;
+
+		if ( 0 == $depth && in_array( 'menu-item-has-children', $classes ) ) :
+			$output .= '<svg class="dropdown-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="dropdown-icon__fill" fill-rule="evenodd" clip-rule="evenodd" d="M1.41421 4.24264L0 5.65685L5.65685 11.3137L11.3137 5.65685L9.89949 4.24264L5.65685 8.48528L1.41421 4.24264Z" /></svg>';
+    endif;
+
+	}
+
+	function end_el(&$output, $item, $depth = 0 , $args=array(), $id = 0 ) {
+			$output .= '</li>';
+	}
+}

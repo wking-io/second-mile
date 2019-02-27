@@ -51,7 +51,7 @@
 					'menu_id' => 'primary-menu',
 					'menu_class' => 'list-reset flex flex-col lg:flex-row justify-center lg:justify-end items-between lg:items-center menu-item-list w-full h-full lg:h-auto p-4 sm:p-6 lg:p-0 m-0',
 					'container' => false,
-					'walker'
+					'walker' => new Primary_Menu()
 				) ); ?>
 				<div class="menu-aside w-full text-white p-4 sm:p-6 m-0 lg:hidden">
 					<p class="mb-4 leading-normal"><?php the_field('company_verse_text', 'options' ); ?></p>
