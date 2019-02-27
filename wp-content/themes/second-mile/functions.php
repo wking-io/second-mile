@@ -11,6 +11,9 @@ define( 'THEME_NAME', 'secondmile' );
 // Setup
 include 'inc/setup.php';
 
+// Setup
+include 'inc/pages-taxonomy.php';
+
 // Assets.
 include 'inc/assets.php';
 

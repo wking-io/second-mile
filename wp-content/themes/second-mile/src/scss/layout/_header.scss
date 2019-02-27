@@ -1,3 +1,11 @@
+.header {
+  @apply px-6 py-4;
+}
+
+.logo-name__fill {
+  fill: $black;
+}
+
 .nav {
   height: 3.5rem;
 
@@ -38,8 +46,8 @@
   background-color: $white;
 }
 
-.menu-item > a:hover {
-  color: $green;
+.menu-item > a:hover .contact-icon__fill {
+  fill: $black;
 }
 
 .sub-menu {
@@ -53,12 +61,53 @@
   padding: 3rem 0 0 0;
 }
 
-.contact-icon__fill {
-  fill: $green;
+[data-theme='green'] {
+  .logo-icon__fill,
+  .contact-icon__fill {
+    fill: $green;
+  }
 }
 
-.menu-item a:hover .contact-icon__fill {
+[data-theme='yellow'] {
+  .logo-icon__fill,
+  .contact-icon__fill {
+    fill: $yellow;
+  }
+}
+
+[data-theme='red'] {
+  .logo-icon__fill,
+  .contact-icon__fill {
+    fill: $red;
+  }
+}
+
+[data-theme='white'] {
+  .logo-icon__fill,
+  .contact-icon__fill {
+    fill: $white;
+  }
+}
+
+[data-style='basic'] {
+}
+
+.logo-name__fill {
   fill: $black;
+}
+
+[data-style='border'] {
+  .logo-name__fill {
+    fill: $black;
+  }
+}
+
+[data-style='background'] {
+  .logo-icon__fill,
+  .contact-icon__fill,
+  .logo-name__fill {
+    fill: $white;
+  }
 }
 
 @include media('<#{$sm}') {
@@ -92,6 +141,7 @@
     height: auto;
 
     .menu-wrapper {
+      z-index: 1;
       transform: translateX(0);
     }
   }
@@ -109,6 +159,10 @@
 
   .menu-item > a {
     color: $black;
+  }
+
+  .menu-item > a:hover .contact-icon__fill {
+    fill: $black;
   }
 
   .menu-item--cta > a {
@@ -169,5 +223,66 @@
 
   .sub-menu-item > a {
     color: $white;
+  }
+
+  [data-style='background'] {
+    .menu-item > a {
+      color: $white;
+    }
+
+    .menu-item--cta > a {
+      background-color: $white;
+      color: $black;
+    }
+
+    .menu-item--cta > a:hover {
+      color: $white;
+      background-color: $black;
+    }
+
+    [data-theme='green'] {
+      .menu-item--cta > a {
+        color: $green;
+      }
+
+      .menu-item--cta > a:hover {
+        background-color: $green;
+      }
+    }
+
+    [data-theme='yellow'] {
+      .menu-item--cta > a {
+        color: $yellow;
+      }
+
+      .menu-item--cta > a:hover {
+        background-color: $yellow;
+      }
+    }
+
+    [data-theme='red'] {
+      .menu-item--cta > a {
+        color: $red;
+      }
+
+      .menu-item--cta > a:hover {
+        background-color: $red;
+      }
+    }
+
+    [data-theme='white'] {
+      .sub-menu {
+        background-color: $white;
+        box-shadow: 0.5rem 1rem 5rem rgba($black, 0.3);
+
+        &:before {
+          border-left: 4rem solid $white;
+        }
+      }
+
+      .sub-menu-item > a {
+        color: $black;
+      }
+    }
   }
 }

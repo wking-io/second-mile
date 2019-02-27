@@ -26,13 +26,13 @@
 		<?php wp_head(); ?>
 	</head>
 
-<body <?php body_class( 'font-sans text-black' ); ?>>
+<body <?php body_class( 'font-sans text-black' ); ?> <?php echo secondmile_page_attributes(); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
-	<header id="masthead" class="w-full flex justify-between items-center fixed px-6 py-4 z-50" role="banner" data-menu-open="false">
+	<header id="masthead" class="header w-full flex justify-between items-center fixed z-50" role="banner" data-menu-open="false">
 		<h1 class="branding relative z-50 h-6">
 			<a class="flex items-center h-full" href="<?php echo home_url(); ?>">
-				<?php echo do_shortcode( '[logo classname="h-full mr-6" color="' . get_page_color() . '"]' ); ?>
+				<?php echo do_shortcode( '[logo classname="h-full mr-6"]' ); ?>
 				<?php echo do_shortcode( '[name classname="h-4"]' ); ?>
 			</a>
 		</h1>
@@ -45,7 +45,7 @@
 				<span></span>
 			</button>
 		
-			<div class="menu-wrapper w-full flex flex-col lg:flex-row justify-end items-center fixed lg:static pin z-30 bg-black lg:bg-transparent p-8 lg:p-0 overflow-hidden lg:overflow-visible text-white lg:text-black text-right opacity-0 lg:opacity-100">
+			<div class="menu-wrapper w-full flex flex-col lg:flex-row justify-end items-center fixed lg:static pin bg-black lg:bg-transparent p-8 lg:p-0 overflow-hidden lg:overflow-visible text-white lg:text-black text-right opacity-0 lg:opacity-100">
 				<?php wp_nav_menu( array(
 					'theme_location' => 'menu-main',
 					'menu_id' => 'primary-menu',
