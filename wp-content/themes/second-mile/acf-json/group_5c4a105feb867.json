@@ -68,6 +68,73 @@
             "maxlength": ""
         },
         {
+            "key": "field_5c868d838e1aa",
+            "label": "Stats",
+            "name": "home_stats",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c4b4c91e8e30",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5c868dfd8e1ac",
+            "min": 0,
+            "max": 3,
+            "layout": "table",
+            "button_label": "Add Stat",
+            "sub_fields": [
+                {
+                    "key": "field_5c868de68e1ab",
+                    "label": "Value",
+                    "name": "stat_value",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5c868dfd8e1ac",
+                    "label": "Title",
+                    "name": "stat_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
             "key": "field_5c4b4d53e8e32",
             "label": "Mission",
             "name": "mission",
@@ -329,5 +396,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1548439306
+    "modified": 1552322099
 }

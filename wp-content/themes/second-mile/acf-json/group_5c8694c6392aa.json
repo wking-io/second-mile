@@ -1,0 +1,146 @@
+{
+    "key": "group_5c8694c6392aa",
+    "title": "ARCHIVE \/\/ Ministry - Family",
+    "fields": [
+        {
+            "key": "field_5c8694c63db94",
+            "label": "Title",
+            "name": "family_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c8694c63dbce",
+            "label": "Subtitle",
+            "name": "family_subtitle",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5c8694c63dc04",
+            "label": "Excerpt",
+            "name": "family_excerpt",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5c8694c63dc38",
+            "label": "Description",
+            "name": "family_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5c8694c63dc6e",
+            "label": "Has Video?",
+            "name": "family_has_video",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c8694c63dca2",
+            "label": "Video",
+            "name": "family_video",
+            "type": "text",
+            "instructions": "To fill out this field follow these steps:\r\n\r\n1. Go to the Cloudinary Media Library > Videos here: http:\/\/turnerbatson.test\/wp-admin\/admin.php?page=cloudinary-image-management-and-manipulation-in-the-cloud-cdn%2Flibrary.php\r\n2. Click into the edit page for the video you want to add\r\n3. Copy the name of the video in the top left\r\n4. Paste the name of the video below",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8694c63dc6e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "family overview-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1552323912
+}

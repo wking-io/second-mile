@@ -19,7 +19,9 @@ function add_option_page( $name ) {
 
 function add_option_pages() {
 	add_option_page('Donation Overview');
-	add_option_page('Ministry Overviews');
+	add_option_page('Community Overview');
+	add_option_page('Education Overview');
+	add_option_page('Family Overview');
 
 	if( function_exists( 'acf_add_options_page' ) ) {
 		// add sub page

@@ -10,23 +10,27 @@
  */
 
 ?>
-	<footer id="footer" class="footer py-8 bg-black" role="contentinfo">
+	<footer id="footer" class="footer py-8 bg-black text-white" role="contentinfo">
 		<div class="wrapper flex flex-col md:flex-row md:items-center justify-between py-4">
-			<div class="flex flex-col lg:flex-row md:w-2/3">
-				<div class="branding flex flex-col items-start justify-start lg:w-1/2 pb-3 lg:pb-0">
-					<?php echo do_shortcode( '[logo classname="w-12 mb-4 h-auto"]' ); ?>
-					<?php echo do_shortcode( '[name classname="h-4" in-color="false" ]' ); ?>
-					<p class="text-white pt-4"><?php echo secondmile_copyright(); ?> Second Mile Architects</p>
-				</div>
-				<div class="lg:w-1/2 py-8 lg:py-0">
-					<p class="text-white pb-6 leading-normal max-w-3xl"><?php the_field( 'secondmile_company_address', 'options' ) ?></p>
-					<?php if ( is_active_sidebar( 'social-widget-area' ) ) : ?>
-							<?php dynamic_sidebar( 'social-widget-area' ); ?>
-					<?php endif; ?>
-				</div>
+			<div class="flex items-center justify-start pb-3 lg:pb-0">
+				<?php echo do_shortcode( '[logo classname="w-12 mr-2 h-auto"]' ); ?>
+				<?php echo do_shortcode( '[name classname="h-10" stacked="true" ]' ); ?>
 			</div>
 			
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-footer', 'menu_id' => 'primary-menu', 'menu_class' => 'list-reset menu-item-list flex flex-col flex-wrap', 'container_class' => 'md:w-1/2 lg:w-1/3 pt-3 lg:pt-0' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'menu-footer', 'menu_id' => 'footer-menu', 'menu_class' => 'footer-nav list-reset flex justify-end', 'container_class' => 'flex-1' ) ); ?>
+	</div>
+	<div>
+		<p><?php the_field('company_address', 'options'); ?></p>
+		<p></p>
+		<p><?php the_field('company_phone_number', 'options'); ?></p>
+		<p></p>
+		<p>
+			<a href="<?php the_field('company_facebook_page', 'options'); ?>">
+				<svg viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M9.27537 6.57204H6.11039V4.49628C6.11039 3.71673 6.62706 3.53499 6.99096 3.53499C7.35403 3.53499 9.22445 3.53499 9.22445 3.53499V0.107953L6.14848 0.0959473C2.73387 0.0959473 1.9568 2.65194 1.9568 4.28763V6.57204H-0.0179443V10.1034H1.9568C1.9568 14.6354 1.9568 20.0959 1.9568 20.0959H6.11039C6.11039 20.0959 6.11039 14.5816 6.11039 10.1034H8.91313L9.27537 6.57204Z" fill="white"/>
+				</svg>
+			</a>
+		</p>
 	</div>
 </footer><!-- #colophon -->
 
