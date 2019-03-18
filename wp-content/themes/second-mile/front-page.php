@@ -88,10 +88,10 @@ $home_ministries     = array(
 </section>
 <?php if ( ! empty( $home_ministries ) ) : ?>
   <section>
-    <ul>
+    <ul class="flex list-reset text-white">
       <?php foreach ( $home_ministries as $index => $data ) : ?>
         <?php if ( ! empty( $data['title'] && ! empty( $data['excerpt'] ) ) ) : ?>
-          <li style="background-image: linear-gradient( rgba(<?php echo $data['color']; ?>, 0.83), rgba(<?php echo $data['color']; ?>, 0.83) ), <?php echo $data['bg']['url']; ?>">
+          <li class="w-1/3 bg-cover bg-center" style="background-image: linear-gradient( rgba(<?php echo $data['color']; ?>, 0.83), rgba(<?php echo $data['color']; ?>, 0.83) ), url('<?php echo $data['bg']['url']; ?>');">
             <p>0<?php echo $index + 1; ?></p>
             <div>
               <h2><?php echo $data['title']; ?></h2>
@@ -105,9 +105,51 @@ $home_ministries     = array(
   </section>
 <?php endif; ?>
 <section>
-  <?php if ( ! empty( $home_who_we_are ) ) : ?>
-    
-  <?php endif; ?>
+  <div class="container flex flex-col md:flex-row">
+    <?php if ( ! empty( $home_who_we_are ) ) : ?>
+      <div class="stack-box">
+        <h3><?php echo $home_who_we_are['title']; ?></h3>
+        <p><?php echo $home_who_we_are['description']; ?></p>
+        <p>
+          <a href="<?php echo site_url('/who-we-are'); ?>"><?php $home_who_we_are['link_text']; ?></a>
+        </p>
+      </div>
+    <?php endif; ?>
+    <?php if ( ! empty( $home_parent_parties ) ) : ?>
+      <?php 
+        $pp_stats   = get_field( 'home_page_stats', $home_parent_parties['post'] );
+        $pp_content = secondmile_get_content_by_id( $home_parent_parties['post'] );
+      ?>
+
+      <div>
+        <div>
+          <?php echo secondmile_pp_logo( 'horizontal' ); ?>
+        </div>
+        <div>
+          <div>
+            <div>
+              <?php echo $pp_content; ?>
+            </div>
+            <p>
+              <a href="<?php echo get_the_permalink( $home_parent_parties['post'] ); ?>)"><?php echo $home_parent_parties['link_text']; ?></a>
+            </p>
+          </div>
+          <?php if ( ! empty( $pp_stats ) ) : ?>
+            <ul>
+              <?php foreach ( $pp_stats as $stat ) : ?>
+                <li>
+                  <p><?php echo $stat['stat_value']; ?></p>
+                  <p><?php echo $stat['stat_title']; ?></p>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
+        </div>
+      </div>
+
+    <?php endif; ?>
+
+  </div>
 </section>
 
 <?php get_footer();

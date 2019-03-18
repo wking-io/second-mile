@@ -50,3 +50,11 @@ function secondmile_page_attributes() {
 
   return 'data-theme="' . $theme . '" data-style="' . $style . '"';
 }
+
+function secondmile_get_content_by_id ( $id = 0 ) {
+  $the_post = get_post($id);
+  $content = $the_post->post_content;
+  $content = apply_filters('the_content', $content);
+  $content = str_replace(']]>', ']]&gt;', $content);
+  return $content;
+}

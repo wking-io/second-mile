@@ -3,6 +3,65 @@
     "title": "SINGLE \/\/ Ministry \/\/ Parent Parties",
     "fields": [
         {
+            "key": "field_5c8f361e5b2f5",
+            "label": "Home Page Stats",
+            "name": "home_page_stats",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5c8f363c5b2f7",
+            "min": 0,
+            "max": 3,
+            "layout": "table",
+            "button_label": "Add Stat",
+            "sub_fields": [
+                {
+                    "key": "field_5c8f36345b2f6",
+                    "label": "Value",
+                    "name": "value",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5c8f363c5b2f7",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
             "key": "field_5c4a16fad9c10",
             "label": "Testimonial",
             "name": "testimonial",
@@ -201,5 +260,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1548439449
+    "modified": 1552889424
 }
