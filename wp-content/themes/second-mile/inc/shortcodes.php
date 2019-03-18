@@ -34,6 +34,38 @@ function secondmile_tagline_shortcode( $atts = array() ) {
 	return implode( ' ', $words );
 }
 
+function secondmile_ui_color( $color = '', $text = '' ) {
+	if ( ! empty( $color && $text ) ) :
+		ob_start(); ?>
+			<span class="<?php echo 'text-' . $color; ?>"><?php echo $text; ?></span>
+		<?php return ob_get_clean();
+	endif;
+}
+
+add_shortcode( 'green', 'secondmile_green_shortcode' );
+
+function secondmile_green_shortcode( $atts = array(), $content = null ) {
+	if ( ! empty( $content ) ) :
+		return secondmile_ui_color( 'green', $content );
+	endif;
+}
+
+add_shortcode( 'yellow', 'secondmile_yellow_shortcode' );
+
+function secondmile_yellow_shortcode( $atts = array(), $content = null ) {
+	if ( ! empty( $content ) ) :
+		return secondmile_ui_color( 'yellow', $content );
+	endif;
+}
+
+add_shortcode( 'red', 'secondmile_red_shortcode' );
+
+function secondmile_red_shortcode( $atts = array(), $content = null ) {
+	if ( ! empty( $content ) ) :
+		return secondmile_ui_color( 'red', $content );
+	endif;
+}
+
 add_shortcode( 'name', 'secondmile_name_shortcode');
 
 function secondmile_name_shortcode( $atts = array() ) {

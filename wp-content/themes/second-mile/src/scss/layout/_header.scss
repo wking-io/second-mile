@@ -56,6 +56,18 @@
     font-weight: normal;
     padding: 3rem 0 0 0;
   }
+
+  .sub-menu-item a:hover {
+    color: $yellow;
+  }
+
+  .sub-menu-item:first-child a:hover {
+    color: $green;
+  }
+
+  .sub-menu-item:last-child a:hover {
+    color: $red;
+  }
 }
 
 [data-menu-open='true'] {
