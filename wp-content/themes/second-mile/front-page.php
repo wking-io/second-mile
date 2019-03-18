@@ -118,7 +118,7 @@ $home_ministries     = array(
     <?php if ( ! empty( $home_parent_parties ) ) : ?>
       <?php 
         $pp_stats   = get_field( 'home_page_stats', $home_parent_parties['post'] );
-        $pp_content = secondmile_get_content_by_id( $home_parent_parties['post'] );
+        $pp_excerpt = get_field( 'ministry_excerpt', $home_parent_parties['post'] );
       ?>
 
       <div>
@@ -126,24 +126,24 @@ $home_ministries     = array(
           <?php echo secondmile_pp_logo( 'horizontal' ); ?>
         </div>
         <div>
+          <?php if ( ! empty( $pp_stats ) ) : ?>
+            <ul class="list-reset">
+              <?php foreach ( $pp_stats as $stat ) : ?>
+                <li>
+                  <p><?php echo $stat['value']; ?></p>
+                  <p><?php echo $stat['title']; ?></p>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
           <div>
             <div>
-              <?php echo $pp_content; ?>
+              <?php echo $pp_excerpt; ?>
             </div>
             <p>
               <a href="<?php echo get_the_permalink( $home_parent_parties['post'] ); ?>)"><?php echo $home_parent_parties['link_text']; ?></a>
             </p>
           </div>
-          <?php if ( ! empty( $pp_stats ) ) : ?>
-            <ul>
-              <?php foreach ( $pp_stats as $stat ) : ?>
-                <li>
-                  <p><?php echo $stat['stat_value']; ?></p>
-                  <p><?php echo $stat['stat_title']; ?></p>
-                </li>
-              <?php endforeach; ?>
-            </ul>
-          <?php endif; ?>
         </div>
       </div>
 
