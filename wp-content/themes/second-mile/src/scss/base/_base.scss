@@ -40,3 +40,22 @@ body {
     width: 90vw;
   }
 }
+
+[data-style='border'] {
+  border: 2rem solid $black;
+  &[data-theme='green'] {
+    border-color: $green;
+  }
+  &[data-theme='yellow'] {
+    border-color: $yellow;
+  }
+  &[data-theme='red'] {
+    border-color: $red;
+  }
+}
+
+@include media('>=#{$lg}') {
+  [data-style='border'] {
+    border: 4rem solid $black;
+  }
+}

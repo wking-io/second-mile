@@ -389,3 +389,18 @@
     }
   }
 }
+
+/* Border Specific Styles */
+[data-style='border'] {
+  .header {
+    width: calc(100% - 4rem);
+  }
+}
+
+@include media('>=#{$lg}') {
+  [data-style='border'] {
+    .header {
+      width: calc(100% - 8rem);
+    }
+  }
+}

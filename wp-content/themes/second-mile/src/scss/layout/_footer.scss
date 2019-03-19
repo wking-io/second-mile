@@ -1,15 +1,18 @@
 .footer {
   background-color: $black;
 
-  [data-theme='green'] & {
+  [data-style='border'][data-theme='green'] &,
+  [data-style='background'][data-theme='green'] & {
     background-color: $green;
   }
 
-  [data-theme='yellow'] & {
+  [data-style='border'][data-theme='yellow'] &,
+  [data-style='background'][data-theme='yellow'] & {
     background-color: $yellow;
   }
 
-  [data-theme='red'] & {
+  [data-style='border'][data-theme='red'] &,
+  [data-style='background'][data-theme='red'] & {
     background-color: $red;
   }
 

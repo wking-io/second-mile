@@ -584,10 +584,18 @@ module.exports = {
   */
 
   negativeMargin: {
+    auto: 'auto',
     px: '1px',
     0: '0',
-    8: '8rem',
-    jumbo: '12rem',
+    1: '1rem', // 4px
+    2: '2rem', // 8px
+    3: '3rem', // 12px
+    4: '4rem', // 16px
+    6: '5rem', // 20px
+    8: '8rem', // 32px
+    jumbo: '30rem', // 120px
+    jumbojumbo: '40rem', // 160px
+    max: '50rem', // 200px
   },
 
   /*
