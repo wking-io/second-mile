@@ -1,5 +1,6 @@
 import '../scss/main.scss';
 import '../images/contact.svg';
+import '../images/topography.svg';
 import { dom } from './modules/dom';
 import { eventOn } from './modules/event';
 import { getAttr, setAttr, attrToBool } from './modules/attr';

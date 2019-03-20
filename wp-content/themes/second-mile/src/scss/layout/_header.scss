@@ -15,6 +15,12 @@
     }
   }
 
+  &[data-menu-open='true'] .nav .menu-wrapper {
+    @apply z-30;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   .menu-item {
     font-size: 5rem;
     font-weight: bold;
@@ -70,16 +76,10 @@
   }
 }
 
-[data-menu-open='true'] {
+body .header[data-menu-open='true'] {
   & .logo-icon__fill,
   & .logo-name__fill {
     fill: $white;
-  }
-
-  & .menu-wrapper {
-    @apply z-30;
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 

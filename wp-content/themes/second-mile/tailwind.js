@@ -154,6 +154,21 @@ module.exports = {
       'Georgia',
       'serif',
     ],
+    thin: [
+      'Oswald',
+      'League Spartan',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      'sans-serif',
+    ],
   },
 
   /*
@@ -534,7 +549,7 @@ module.exports = {
     4: '4rem', // 16px
     6: '5rem', // 20px
     8: '8rem', // 32px
-    jumbo: '30rem', // 120px
+    jumbo: '24rem', // 120px
     jumbojumbo: '40rem', // 160px
     max: '50rem', // 200px
   },

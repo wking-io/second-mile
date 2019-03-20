@@ -36,16 +36,16 @@ $home_ministries     = array(
 
 ?>
 
-<section class="bg-pattern">
+<section class="bg-pattern pl-6 pr-6 pt-nav pb-8">
 
-  <h1><?php echo do_shortcode( $home_title ); ?></h1>
+  <h1 class="hero__title text-display uppercase pt-jumbo leading-tight mb-4"><?php echo do_shortcode( $home_title ); ?></h1>
   <?php if ( ! empty( $verse_text ) && ! empty( $verse_location ) ) : ?>
-    <aside>
-      <p><?php echo $verse_text; ?></p>
-      <p><cite class="roman"><?php echo $verse_location; ?></cite></p>
+    <aside class="mb-8">
+      <p class="leading-normal mb-2"><?php echo $verse_text; ?></p>
+      <p class="font-bold"><cite class="roman"><?php echo $verse_location; ?></cite></p>
     </aside>
   <?php endif; ?>
-  <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row' : ''; ?>">
+  <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row' : ''; ?> mb-8">
     <?php if ( $home_has_video ) : ?>
       <div class="hero__video">
         <?php 
@@ -63,24 +63,24 @@ $home_ministries     = array(
         ?>
       </div>
     <?php elseif ( ! empty( $home_stats ) ) : ?>
-      <ul>
+      <ul class="list-reset flex justify-center -mx-2 py-8">
         <?php foreach ( $home_stats as $i => $stat ) : ?>
-          <li>
-            <p><?php echo $stat['stat_value']; ?></p>
-            <p><?php echo $stat['stat_title']; ?></p>
+          <li class="text-center flex-1 px-2">
+            <p class="font-bold text-lg font-thin mb-1"><?php echo $stat['stat_value']; ?></p>
+            <p class="font-bold text-xs"><?php echo $stat['stat_title']; ?></p>
           </li>
         <?php endforeach; ?>
       </ul>
     <?php endif; ?>
     <?php if ( ! empty( $home_mission ) && ! empty( $home_vision ) ) : ?>
-      <div class="flex flex-col">
-        <div>
-          <h2><?php echo $home_mission['title']; ?></h2>
-          <p><?php echo $home_mission['description']; ?></p>
+      <div class="flex flex-col pt-4">
+        <div class="mb-8">
+          <h2 class="text-base uppercase text-display mb-3"><?php echo $home_mission['title']; ?></h2>
+          <div class="font-serif leading-normal text-sm"><?php echo $home_mission['description']; ?></div>
         </div>
         <div>
-          <h2><?php echo $home_vision['title']; ?></h2>
-          <p><?php echo $home_vision['description']; ?></p>
+          <h2 class="text-base uppercase text-display mb-3"><?php echo $home_vision['title']; ?></h2>
+          <div class="font-serif leading-normal text-sm"><?php echo $home_vision['description']; ?></div>
         </div>
       </div>
     <?php endif; ?>
@@ -88,15 +88,15 @@ $home_ministries     = array(
 </section>
 <?php if ( ! empty( $home_ministries ) ) : ?>
   <section>
-    <ul class="flex list-reset text-white">
+    <ul class="flex flex-col md:flex-row list-reset text-white">
       <?php foreach ( $home_ministries as $index => $data ) : ?>
         <?php if ( ! empty( $data['title'] && ! empty( $data['excerpt'] ) ) ) : ?>
-          <li class="w-1/3 bg-cover bg-center" style="background-image: linear-gradient( rgba(<?php echo $data['color']; ?>, 0.83), rgba(<?php echo $data['color']; ?>, 0.83) ), url('<?php echo $data['bg']['url']; ?>');">
-            <p>0<?php echo $index + 1; ?></p>
+          <li class="w-full md:w-1/3 bg-cover bg-center relative p-8 overflow-hidden" style="background-image: linear-gradient( rgba(<?php echo $data['color']; ?>, 0.83), rgba(<?php echo $data['color']; ?>, 0.83) ), url('<?php echo $data['bg']['url']; ?>');">
+            <p class="font-display leading-none absolute pin-t pin-l -mt-1 -ml-6 opacity-25 ministry-count">0<?php echo $index + 1; ?></p>
             <div>
-              <h2><?php echo $data['title']; ?></h2>
-              <p><?php echo $data['excerpt']; ?></p>
-              <p><a href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?></a></p>
+              <h2 class="uppercase font-display font-md mb-4"><?php echo $data['title']; ?></h2>
+              <div class="leading-normal mb-4"><?php echo $data['excerpt']; ?></div>
+              <p><a class="font-bold uppercase text-white hover:no-underline" href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?></a></p>
             </div>
           </li>
         <?php endif; ?>

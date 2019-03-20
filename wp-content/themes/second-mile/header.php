@@ -37,7 +37,7 @@
 			</a>
 		</h1>
 
-		<nav class="nav z-50" role="navigation">
+		<nav class="nav z-40" role="navigation">
 			<button class="menu-toggle z-40 w-6 relative cursor-pointer lg:hidden" aria-expanded="false" aria-controls="masthead">
 				<span></span>
 				<span></span>
