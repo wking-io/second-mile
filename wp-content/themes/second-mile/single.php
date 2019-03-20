@@ -8,18 +8,6 @@ $ministry_donation_url = get_field( 'donation_link_url' );
 $ministry_donation_text = get_field( 'donation_link_text' );
 $ministry_stat = get_field( 'ministry_subtitle' );
 
-function get_color( $category_name = '' ) {
-  if ( 'community' == $category_name ) :
-    return 'green';
-  elseif ( 'education' == $category_name ) :
-    return 'yellow';
-  elseif ( 'family' == $category_name ) :
-    return 'red';
-  endif;
-
-  return 'green';
-}
-
 ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
