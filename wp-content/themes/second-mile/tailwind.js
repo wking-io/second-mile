@@ -487,6 +487,7 @@ module.exports = {
     '3xl': '80rem',
     '4xl': '90rem',
     '5xl': '100rem',
+    '6xl': '150rem',
     full: '100%',
   },
 
@@ -593,7 +594,7 @@ module.exports = {
     4: '4rem', // 16px
     6: '5rem', // 20px
     8: '8rem', // 32px
-    jumbo: '30rem', // 120px
+    jumbo: '24rem', // 120px
     jumbojumbo: '40rem', // 160px
     max: '50rem', // 200px
   },

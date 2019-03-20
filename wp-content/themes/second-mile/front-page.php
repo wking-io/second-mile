@@ -118,7 +118,7 @@ $home_ministries     = array(
     <?php if ( ! empty( $home_parent_parties ) ) : ?>
       <?php 
         $pp_stats   = get_field( 'home_page_stats', $home_parent_parties['post'] );
-        $pp_excerpt = get_field( 'ministry_excerpt', $home_parent_parties['post'] );
+        $pp_excerpt = get_field( 'home_page_description', $home_parent_parties['post'] );
       ?>
 
       <div>

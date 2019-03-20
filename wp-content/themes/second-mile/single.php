@@ -6,13 +6,13 @@ $ministry_subtitle = get_field( 'ministry_subtitle' );
 $ministry_image = get_field( 'ministry_image' );
 $ministry_donation_url = get_field( 'donation_link_url' );
 $ministry_donation_text = get_field( 'donation_link_text' );
-$ministry_stat = get_field( 'ministry_subtitle' );
+$ministry_stat = get_field( 'ministry_stat' );
 
 ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php $ministry_category = get_main_category( get_the_ID(), 'category' ); ?>
-  <section class="ministry-bg bg-<?php echo get_color( $ministry_category ); ?> text-white">
+  <section class="ministry-bg bg-<?php echo secondmile_get_color( $ministry_category ); ?> text-white">
     <h3><?php echo $ministry_category; ?></h3>
     <h2><?php echo the_title(); ?></h2>
     <p><?php echo $ministry_subtitle; ?></p>

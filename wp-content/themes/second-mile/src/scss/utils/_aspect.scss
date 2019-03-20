@@ -1,4 +1,10 @@
 @responsive {
+  .aspect-none {
+    &:before {
+      display: none;
+    }
+  }
+
   .aspect-3\:1 {
     @include aspect-ratio(3, 1);
   }
