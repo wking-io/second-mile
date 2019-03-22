@@ -36,16 +36,16 @@ $home_ministries     = array(
 
 ?>
 
-<section class="bg-pattern pl-6 pr-6 pt-nav pb-8">
+<section class="bg-pattern px-6 lg:px-8 pt-nav pb-8 relative">
 
-  <h1 class="hero__title text-display uppercase pt-jumbo leading-tight mb-4"><?php echo do_shortcode( $home_title ); ?></h1>
+  <h1 class="hero__title text-display uppercase pt-jumbo leading-tight mb-4 px-4"><?php echo do_shortcode( $home_title ); ?></h1>
   <?php if ( ! empty( $verse_text ) && ! empty( $verse_location ) ) : ?>
-    <aside class="mb-8">
+    <aside class="mb-8 lg:absolute">
       <p class="leading-normal mb-2"><?php echo $verse_text; ?></p>
       <p class="font-bold"><cite class="roman"><?php echo $verse_location; ?></cite></p>
     </aside>
   <?php endif; ?>
-  <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row' : ''; ?> mb-8">
+  <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row' : ''; ?> mb-8 lg">
     <?php if ( $home_has_video ) : ?>
       <div class="hero__video">
         <?php 
@@ -63,24 +63,24 @@ $home_ministries     = array(
         ?>
       </div>
     <?php elseif ( ! empty( $home_stats ) ) : ?>
-      <ul class="list-reset flex justify-center -mx-3 py-8">
+      <ul class="list-reset flex justify-center lg:justify-between -mx-3 py-8">
         <?php foreach ( $home_stats as $i => $stat ) : ?>
-          <li class="text-center flex-1 px-3">
-            <p class="font-bold text-lg font-thin mb-1"><?php echo $stat['stat_value']; ?></p>
-            <p class="font-bold text-xs"><?php echo $stat['stat_title']; ?></p>
+          <li class="text-center lg:text-left flex-1 px-3">
+            <p class="font-bold text-lg font-thin mb-1 lg:text-2xl"><?php echo $stat['stat_value']; ?></p>
+            <p class="font-bold text-xs lg:text-sm"><?php echo $stat['stat_title']; ?></p>
           </li>
         <?php endforeach; ?>
       </ul>
     <?php endif; ?>
     <?php if ( ! empty( $home_mission ) && ! empty( $home_vision ) ) : ?>
-      <div class="flex flex-col pt-4">
-        <div class="mb-8">
-          <h2 class="text-base uppercase text-display mb-3"><?php echo $home_mission['title']; ?></h2>
-          <div class="font-serif leading-normal text-sm"><?php echo $home_mission['description']; ?></div>
+      <div class="flex flex-col md:flex-row md:-mx-4 pt-4">
+        <div class="mb-8 md:mb-0 md:mx-4">
+          <h2 class="text-base uppercase text-display mb-3 lg:text-md"><?php echo $home_mission['title']; ?></h2>
+          <div class="font-serif leading-normal text-sm lg:text-base"><?php echo $home_mission['description']; ?></div>
         </div>
-        <div>
-          <h2 class="text-base uppercase text-display mb-3"><?php echo $home_vision['title']; ?></h2>
-          <div class="font-serif leading-normal text-sm"><?php echo $home_vision['description']; ?></div>
+        <div class="md:mx-4">
+          <h2 class="text-base uppercase text-display mb-3 lg:text-md"><?php echo $home_vision['title']; ?></h2>
+          <div class="font-serif leading-normal text-sm lg:text-base"><?php echo $home_vision['description']; ?></div>
         </div>
       </div>
     <?php endif; ?>
@@ -88,15 +88,15 @@ $home_ministries     = array(
 </section>
 <?php if ( ! empty( $home_ministries ) ) : ?>
   <section>
-    <ul class="flex flex-col md:flex-row list-reset text-white">
+    <ul class="flex flex-col lg:flex-row list-reset text-white">
       <?php foreach ( $home_ministries as $index => $data ) : ?>
         <?php if ( ! empty( $data['title'] && ! empty( $data['excerpt'] ) ) ) : ?>
-          <li class="w-full md:w-1/3 bg-cover bg-center relative p-8 overflow-hidden" style="background-image: linear-gradient( rgba(<?php echo $data['color']; ?>, 0.83), rgba(<?php echo $data['color']; ?>, 0.83) ), url('<?php echo $data['bg']['url']; ?>');">
-            <p class="font-display leading-none absolute pin-t pin-l -mt-1 -ml-6 opacity-25 ministry-count">0<?php echo $index + 1; ?></p>
+          <li class="w-full lg:w-1/3 lg:h-jumbo lg:flex lg:items-end bg-cover bg-center relative p-8 overflow-hidden" style="background-image: linear-gradient( rgba(<?php echo $data['color']; ?>, 0.83), rgba(<?php echo $data['color']; ?>, 0.83) ), url('<?php echo $data['bg']['url']; ?>');">
+            <p class="font-display leading-none absolute pin-t pin-l -mt-1 -ml-6 lg:-ml-8 opacity-25 ministry-count">0<?php echo $index + 1; ?></p>
             <div>
-              <h2 class="uppercase font-display font-md mb-3"><?php echo $data['title']; ?></h2>
-              <div class="leading-normal mb-6"><?php echo $data['excerpt']; ?></div>
-              <p><a class="font-bold uppercase text-white hover:no-underline" href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?> Ministries</a></p>
+              <h2 class="uppercase font-display text-md mb-3 lg:mb-8"><?php echo $data['title']; ?></h2>
+              <div class="leading-normal mb-6 text-md lg:text-lg lg:mb-jumbo"><?php echo $data['excerpt']; ?></div>
+              <p class="lg:mb-8"><a class="font-bold uppercase text-white hover:no-underline button-outline button-outline--white-<?php echo $data['title']; ?>" href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?> Ministries</a></p>
             </div>
           </li>
         <?php endif; ?>
@@ -105,15 +105,17 @@ $home_ministries     = array(
   </section>
 <?php endif; ?>
 <section>
-  <div class="flex flex-col items-start md:flex-row py-8 md:py-jumbo">
+  <div class="flex flex-col items-start lg:flex-row py-8 mt-6 lg:w-9/10 lg:mx-auto">
     <?php if ( ! empty( $home_who_we_are ) ) : ?>
-      <div class="stack-box my-8 md:my-0">
-        <div class="stack-box__content">
-          <h3 class="uppercase text-2xl font-display mb-4"><?php echo $home_who_we_are['title']; ?></h3>
-          <div class="font-serif text-sm leading-normal mb-8"><?php echo $home_who_we_are['description']; ?></div>
-          <p>
-            <a class="button-light" href="<?php echo site_url('/who-we-are'); ?>"><?php echo $home_who_we_are['link_text']; ?></a>
-          </p>
+      <div class="stack-box flex-no-shrink">
+        <div class="stack-box__content sm:flex sm:items-end lg:block">
+          <h3 class="stack-box__title uppercase text-2xl font-display mb-4 sm:mb-0 sm:mr-6 lg:mb-4 lg:mr-0"><?php echo $home_who_we_are['title']; ?></h3>
+          <div class="font-serif text-sm leading-normal mb-0">
+            <?php echo $home_who_we_are['description']; ?>
+            <p class="pt-8">
+              <a class="button-light" href="<?php echo site_url('/who-we-are'); ?>"><?php echo $home_who_we_are['link_text']; ?></a>
+            </p>
+          </div>
         </div>
       </div>
     <?php endif; ?>
@@ -123,27 +125,28 @@ $home_ministries     = array(
         $pp_excerpt = get_field( 'home_page_description', $home_parent_parties['post'] );
       ?>
 
-      <div class="px-6 py-8">
-        <div class="w-64">
+      <div class="px-6 py-8 lg:ml-8 lg:pt-0 flex-1">
+        <div class="w-64 py-8 lg:pt-0 lg:mb-8 xl:py-0 relative">
           <?php echo secondmile_pp_logo( 'vertical' ); ?>
+          <div class="parent-accent"></div>
         </div>
-        <div>
+        <div class="lg:flex lg:flex-row-reverse parent-content">
           <?php if ( ! empty( $pp_stats ) ) : ?>
-            <ul class="list-reset">
+            <ul class="flex xl:flex-col mb-8 -mx-6 lg:mx-0 lg:mb-0 parent-stats">
               <?php foreach ( $pp_stats as $stat ) : ?>
-                <li>
-                  <p><?php echo $stat['value']; ?></p>
-                  <p><?php echo $stat['title']; ?></p>
+                <li class="px-6 parent-stats-item lg:mb-8 lg:text-right">
+                  <p class="font-bold text-xl font-thin mb-1"><?php echo $stat['value']; ?></p>
+                  <p class="font-bold text-sm"><?php echo $stat['title']; ?></p>
                 </li>
               <?php endforeach; ?>
             </ul>
           <?php endif; ?>
           <div>
-            <div>
+            <div class="parent-excerpt leading-normal font-serif text-sm mb-8">
               <?php echo $pp_excerpt; ?>
             </div>
             <p>
-              <a href="<?php echo get_the_permalink( $home_parent_parties['post'] ); ?>)"><?php echo $home_parent_parties['link_text']; ?></a>
+              <a class="button-outline button-outline--yellow" href="<?php echo get_the_permalink( $home_parent_parties['post'] ); ?>)"><?php echo $home_parent_parties['link_text']; ?></a>
             </p>
           </div>
         </div>
