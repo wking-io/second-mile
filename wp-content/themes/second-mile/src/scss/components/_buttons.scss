@@ -1,8 +1,8 @@
 .button {
-  @apply inline-block no-underline font-bold text-white py-3 px-8 bg-primary relative text-center;
+  @apply inline-block no-underline font-bold text-white py-3 px-8 bg-black relative text-center;
 
   &:hover {
-    @apply bg-primary-dark;
+    @apply bg-black;
   }
 
   & > .loader {
@@ -18,7 +18,7 @@
     opacity: 1;
   }
 
-  &-lg {
+  &--lg {
     @apply py-6;
     padding-left: 48px;
     padding-right: 48px;
@@ -29,99 +29,54 @@
   }
 }
 
-.button-outline-dark {
-  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black text-center;
+.button-light {
+  @apply block no-underline font-bold py-4 px-8 relative text-center bg-white text-black font-display uppercase rounded text-sm;
+  border: 1px solid $white;
+  padding-top: 4rem;
+  padding-bottom: 3.5rem;
 
   &:hover {
-    @apply bg-primary text-white;
+    @apply bg-transparent text-white;
+    border: 1px solid $white;
   }
 }
 
-.button-outline-primary {
-  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-primary text-center;
+// .button-outline-dark {
+//   @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black text-center;
 
-  &:hover {
-    @apply bg-primary text-white;
-  }
-}
+//   &:hover {
+//     @apply bg-primary text-white;
+//   }
+// }
 
-.button-outline-dark {
-  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black text-center;
+// .button-outline-primary {
+//   @apply inline-block no-underline font-bold text-black py-3 px-8 border border-primary text-center;
 
-  &:hover {
-    @apply bg-black text-white;
-  }
-}
+//   &:hover {
+//     @apply bg-primary text-white;
+//   }
+// }
 
-.button-outline-light {
-  @apply inline-block no-underline font-bold text-white py-3 px-8 border border-white text-center;
+// .button-outline-dark {
+//   @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black text-center;
 
-  &:hover {
-    @apply bg-white text-black;
-  }
-}
+//   &:hover {
+//     @apply bg-black text-white;
+//   }
+// }
 
-.button-link-primary {
-  @apply inline-block underline font-bold text-primary border-0;
+// .button-outline-light {
+//   @apply inline-block no-underline font-bold text-white py-3 px-8 border border-white text-center;
 
-  &:hover {
-    @apply no-underline;
-  }
-}
+//   &:hover {
+//     @apply bg-white text-black;
+//   }
+// }
 
-.button-slider {
-  @apply border border-primary relative bg-white;
-  width: 44px;
-  height: 44px;
-  padding: 2.75rem;
-  cursor: pointer;
+// .button-link-primary {
+//   @apply inline-block underline font-bold text-primary border-0;
 
-  &-secondary {
-    @apply border-black;
-  }
-
-  &-secondary:hover {
-    @apply bg-black;
-  }
-
-  &-arrow {
-    height: 20px;
-  }
-
-  &-arrow-fill {
-    fill: $primary;
-  }
-
-  &-secondary &-arrow-fill {
-    fill: $black;
-  }
-
-  &-secondary:hover &-arrow-fill {
-    fill: $white;
-  }
-
-  &-next {
-    transform: rotate(180deg);
-    margin: 0 0 0 -5px;
-  }
-
-  &-prev.button-slider-vertical {
-    transform: rotate(90deg);
-  }
-
-  &-next.button-slider-vertical {
-    transform: rotate(270deg);
-  }
-}
-
-@include media('>=#{$md}') {
-  .button-slider-large {
-    width: 64px;
-    height: 64px;
-    padding: 4.75rem;
-
-    & .button-slider-arrow {
-      height: 24px;
-    }
-  }
-}
+//   &:hover {
+//     @apply no-underline;
+//   }
+// }

@@ -63,9 +63,9 @@ $home_ministries     = array(
         ?>
       </div>
     <?php elseif ( ! empty( $home_stats ) ) : ?>
-      <ul class="list-reset flex justify-center -mx-2 py-8">
+      <ul class="list-reset flex justify-center -mx-3 py-8">
         <?php foreach ( $home_stats as $i => $stat ) : ?>
-          <li class="text-center flex-1 px-2">
+          <li class="text-center flex-1 px-3">
             <p class="font-bold text-lg font-thin mb-1"><?php echo $stat['stat_value']; ?></p>
             <p class="font-bold text-xs"><?php echo $stat['stat_title']; ?></p>
           </li>
@@ -94,9 +94,9 @@ $home_ministries     = array(
           <li class="w-full md:w-1/3 bg-cover bg-center relative p-8 overflow-hidden" style="background-image: linear-gradient( rgba(<?php echo $data['color']; ?>, 0.83), rgba(<?php echo $data['color']; ?>, 0.83) ), url('<?php echo $data['bg']['url']; ?>');">
             <p class="font-display leading-none absolute pin-t pin-l -mt-1 -ml-6 opacity-25 ministry-count">0<?php echo $index + 1; ?></p>
             <div>
-              <h2 class="uppercase font-display font-md mb-4"><?php echo $data['title']; ?></h2>
-              <div class="leading-normal mb-4"><?php echo $data['excerpt']; ?></div>
-              <p><a class="font-bold uppercase text-white hover:no-underline" href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?></a></p>
+              <h2 class="uppercase font-display font-md mb-3"><?php echo $data['title']; ?></h2>
+              <div class="leading-normal mb-6"><?php echo $data['excerpt']; ?></div>
+              <p><a class="font-bold uppercase text-white hover:no-underline" href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?> Ministries</a></p>
             </div>
           </li>
         <?php endif; ?>
@@ -105,14 +105,16 @@ $home_ministries     = array(
   </section>
 <?php endif; ?>
 <section>
-  <div class="container flex flex-col md:flex-row">
+  <div class="flex flex-col items-start md:flex-row py-8 md:py-jumbo">
     <?php if ( ! empty( $home_who_we_are ) ) : ?>
-      <div class="stack-box">
-        <h3><?php echo $home_who_we_are['title']; ?></h3>
-        <p><?php echo $home_who_we_are['description']; ?></p>
-        <p>
-          <a href="<?php echo site_url('/who-we-are'); ?>"><?php $home_who_we_are['link_text']; ?></a>
-        </p>
+      <div class="stack-box my-8 md:my-0">
+        <div class="stack-box__content">
+          <h3 class="uppercase text-2xl font-display mb-4"><?php echo $home_who_we_are['title']; ?></h3>
+          <div class="font-serif text-sm leading-normal mb-8"><?php echo $home_who_we_are['description']; ?></div>
+          <p>
+            <a class="button-light" href="<?php echo site_url('/who-we-are'); ?>"><?php echo $home_who_we_are['link_text']; ?></a>
+          </p>
+        </div>
       </div>
     <?php endif; ?>
     <?php if ( ! empty( $home_parent_parties ) ) : ?>
@@ -121,9 +123,9 @@ $home_ministries     = array(
         $pp_excerpt = get_field( 'home_page_description', $home_parent_parties['post'] );
       ?>
 
-      <div>
-        <div>
-          <?php echo secondmile_pp_logo( 'horizontal' ); ?>
+      <div class="px-6 py-8">
+        <div class="w-64">
+          <?php echo secondmile_pp_logo( 'vertical' ); ?>
         </div>
         <div>
           <?php if ( ! empty( $pp_stats ) ) : ?>
