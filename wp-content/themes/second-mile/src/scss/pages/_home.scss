@@ -107,6 +107,31 @@
     font-size: 5vw;
   }
 
+  .hero__verse {
+    // transform: rotate(90deg);
+    // transform-origin: top right;
+    right: 4.75rem;
+    top: 50%;
+
+  }
+
+  .hero__verse__text {
+    margin-right: 140px;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: calc( 50% + 0.5rem );
+      transform: translateY(-50%);
+      left: calc( 100% + 5rem );
+      width: 100px;
+      height: 0.5rem;
+      background-color: rgba( $black, 0.25 );
+    }
+  }
+
   .hero__content {
     max-width: 900px;
     margin: 0 auto;

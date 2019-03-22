@@ -40,8 +40,8 @@ $home_ministries     = array(
 
   <h1 class="hero__title text-display uppercase pt-jumbo leading-tight mb-4 px-4"><?php echo do_shortcode( $home_title ); ?></h1>
   <?php if ( ! empty( $verse_text ) && ! empty( $verse_location ) ) : ?>
-    <aside class="mb-8 lg:absolute">
-      <p class="leading-normal mb-2"><?php echo $verse_text; ?></p>
+    <aside class="hero__verse mb-8 lg:absolute lg:flex lg:items-center">
+      <p class="hero__verse__text leading-normal mb-2 lg:font-bold lg:mb-0"><?php echo $verse_text; ?></p>
       <p class="font-bold"><cite class="roman"><?php echo $verse_location; ?></cite></p>
     </aside>
   <?php endif; ?>
