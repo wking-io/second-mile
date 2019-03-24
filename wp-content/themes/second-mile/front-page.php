@@ -38,11 +38,11 @@ $home_ministries     = array(
 
 <section class="bg-pattern px-6 lg:px-8 pt-nav pb-8 relative">
 
-  <h1 class="hero__title text-display uppercase pt-jumbo leading-tight mb-4 px-4"><?php echo do_shortcode( $home_title ); ?></h1>
+  <h1 class="hero__title text-display uppercase pt-jumbo leading-tight mb-4 lg:mb-8 lg:px-4"><?php echo do_shortcode( $home_title ); ?></h1>
   <?php if ( ! empty( $verse_text ) && ! empty( $verse_location ) ) : ?>
     <aside class="hero__verse mb-8 lg:absolute lg:flex lg:items-center">
-      <p class="hero__verse__text leading-normal mb-2 lg:font-bold lg:mb-0"><?php echo $verse_text; ?></p>
-      <p class="font-bold"><cite class="roman"><?php echo $verse_location; ?></cite></p>
+      <p class="hero__verse__text leading-normal mb-2 lg:font-bold lg:mb-0 lg:text-sm"><?php echo $verse_text; ?></p>
+      <p class="font-bold lg:text-sm"><cite class="roman"><?php echo $verse_location; ?></cite></p>
     </aside>
   <?php endif; ?>
   <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row' : ''; ?> mb-8 lg">
@@ -63,7 +63,7 @@ $home_ministries     = array(
         ?>
       </div>
     <?php elseif ( ! empty( $home_stats ) ) : ?>
-      <ul class="list-reset flex justify-center lg:justify-between -mx-3 py-8">
+      <ul class="list-reset flex justify-center lg:justify-between -mx-3 py-8 lg:mb-4">
         <?php foreach ( $home_stats as $i => $stat ) : ?>
           <li class="text-center lg:text-left flex-1 px-3">
             <p class="font-bold text-lg font-thin mb-1 lg:text-2xl"><?php echo $stat['stat_value']; ?></p>
@@ -95,8 +95,8 @@ $home_ministries     = array(
             <p class="font-display leading-none absolute pin-t pin-l -mt-1 -ml-6 lg:-ml-8 opacity-25 ministry-count">0<?php echo $index + 1; ?></p>
             <div>
               <h2 class="uppercase font-display text-md mb-3 lg:mb-8"><?php echo $data['title']; ?></h2>
-              <div class="leading-normal mb-6 text-md lg:text-lg lg:mb-jumbo"><?php echo $data['excerpt']; ?></div>
-              <p class="lg:mb-8"><a class="font-bold uppercase text-white hover:no-underline button-outline button-outline--white-<?php echo $data['title']; ?>" href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?> Ministries</a></p>
+              <div class="leading-normal mb-6 md:text-md lg:text-lg lg:mb-jumbo"><?php echo $data['excerpt']; ?></div>
+              <p class="lg:mb-8"><a class="font-bold text-xs md:text-sm uppercase text-white hover:no-underline button-outline button-outline--white-<?php echo $data['title']; ?>" href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?> Ministries</a></p>
             </div>
           </li>
         <?php endif; ?>
@@ -130,7 +130,7 @@ $home_ministries     = array(
           <?php echo secondmile_pp_logo( 'vertical' ); ?>
           <div class="parent-accent"></div>
         </div>
-        <div class="lg:flex lg:flex-row-reverse parent-content">
+        <div class="xl:flex xl:flex-row-reverse parent-content">
           <?php if ( ! empty( $pp_stats ) ) : ?>
             <ul class="flex xl:flex-col mb-8 -mx-6 lg:mx-0 lg:mb-0 parent-stats">
               <?php foreach ( $pp_stats as $stat ) : ?>

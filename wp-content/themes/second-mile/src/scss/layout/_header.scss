@@ -1,4 +1,42 @@
 .header {
+  &[data-header-fixed='false'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &[data-header-fixed='true'] {
+    position: fixed;
+
+    [data-style='background'] & {
+      &[data-theme='green'] {
+        .header {
+          background-color: $green;
+        }
+      }
+
+      &[data-theme='yellow'] {
+        .header {
+          background-color: $yellow;
+        }
+      }
+
+      &[data-theme='red'] {
+        .header {
+          background-color: $red;
+        }
+      }
+
+      &[data-theme='white'] {
+        .header {
+          background-color: $black;
+        }
+      }
+    }
+  }
+
   @apply px-6 py-4;
   background-color: $white;
 
@@ -139,30 +177,6 @@ body .header[data-menu-open='true'] {
       background-color: $white;
     }
   }
-
-  &[data-theme='green'] {
-    .header {
-      background-color: $green;
-    }
-  }
-
-  &[data-theme='yellow'] {
-    .header {
-      background-color: $yellow;
-    }
-  }
-
-  &[data-theme='red'] {
-    .header {
-      background-color: $red;
-    }
-  }
-
-  &[data-theme='white'] {
-    .header {
-      background-color: $black;
-    }
-  }
 }
 
 @include media('<#{$sm}') {
@@ -249,7 +263,7 @@ body .header[data-menu-open='true'] {
       position: absolute;
       background-color: $black;
       text-align: left;
-      top: calc(100% + 6rem);
+      top: calc(100% + 5rem);
       left: 0;
       border-radius: 1rem;
       box-shadow: 0.5rem 1rem 5rem rgba($black, 0.3);
