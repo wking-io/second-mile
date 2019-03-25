@@ -109,4 +109,40 @@
       margin: 0 5rem;
     }
   }
+
+  .page--who-we-are .footer {
+    width: 60%;
+
+    & .footer-nav > .menu-item {
+      padding: 0 0 8rem 0;
+    }
+
+    & .footer-nav > .menu-item:nth-child(n) > .sub-menu {
+      padding: 0;
+    }
+
+    .footer__bar {
+      margin: 5rem 0;
+    }
+  }
+}
+
+@include media('>=#{$xl}') {
+  .page--who-we-are .footer {
+    & .footer-nav > .menu-item {
+      padding: 0;
+    }
+
+    & .footer-nav > .menu-item:nth-child(n) > .sub-menu {
+      padding: 0 0 0 20rem;
+    }
+
+    & .footer-nav > .menu-item:nth-child(1) > .sub-menu {
+      padding: 0;
+    }
+
+    .footer__bar {
+      margin: 5rem 0;
+    }
+  }
 }

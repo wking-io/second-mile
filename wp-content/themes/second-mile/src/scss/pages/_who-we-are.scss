@@ -1,0 +1,33 @@
+.board-title {
+  font-size: 10vw;
+  line-height: 1.5;
+}
+
+.ministry-list__item__count {
+  font-size: 25rem;
+}
+
+@include media('>=#{$md}') {
+  .board-title {
+    font-size: 4vw;
+  }
+}
+
+@include media('>=#{$lg}') {
+  .ministry-list {
+    top: 56px;
+    height: calc(100vh - 56px + 6rem);
+    max-height: calc(100% - 8rem);
+    position: absolute;
+    top: 56px;
+    right: 0;
+
+    &[data-fixed="true"] {
+      position: fixed;
+    }
+  }
+
+  .ministry-list__item__count {
+    font-size: 32rem;
+  }
+}

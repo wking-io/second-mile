@@ -19,6 +19,11 @@ if ( ! function_exists( 'secondmile_scripts' ) ) :
 			wp_register_script( 'home', get_template_directory_uri() . '/assets/js/home.js', array(), '1.0.0', true );
 			wp_enqueue_script( 'home' );
 		endif;
+
+		if ( is_page( 'who-we-are' ) ) :
+			wp_register_script( 'who-we-are', get_template_directory_uri() . '/assets/js/who-we-are.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'who-we-are' );
+		endif;
 		
 		if ( is_home() ) :
 			wp_register_script( 'donate', get_template_directory_uri() . '/assets/js/donate.js', array(), '1.0.0', true );
