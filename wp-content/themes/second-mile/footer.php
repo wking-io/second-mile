@@ -27,7 +27,7 @@ if ( ! is_page( 'who-we-are' ) ) {
 			
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-footer', 'menu_id' => 'footer-menu', 'menu_class' => $menu_classes, 'container_class' => '' ) ); ?>
 	</div>
-	<div class="flex flex-col <?php echo ! is_page( 'who-we-are' ) ? 'lg:flex-row' : ''; ?> justify-center items-center mb-4" >
+	<div class="wrapper text-center leading-normal lg:text-left flex flex-col <?php echo ! is_page( 'who-we-are' ) ? 'lg:flex-row' : ''; ?> justify-center items-center mb-4" >
 		<p class="mb-1 <?php echo ! is_page( 'who-we-are' ) ? 'lg:mb-0' : ''; ?>"><?php the_field('company_address', 'options'); ?></p>
 		<p class="footer__bar"></p>
 		<p class="mb-4 <?php echo ! is_page( 'who-we-are' ) ? 'lg:mb-0' : ''; ?>"><?php the_field('company_phone_number', 'options'); ?></p>

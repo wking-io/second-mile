@@ -1,0 +1,23 @@
+.donate-title {
+  font-size: 11vw;
+}
+
+.donate-item {
+  width: 100%;
+}
+
+@include media('>=#{$md}') {
+  .donate-item {
+    width: calc( 100% / 2 - 4rem );
+  }
+}
+
+@include media('>=#{$lg}') {
+  .donate-title {
+    font-size: 56px;
+    width: 430px;
+  }
+  .donate-item {
+    width: calc( 100% / 3 - 4rem );
+  }
+}
