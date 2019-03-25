@@ -9,6 +9,17 @@
   }
 }
 
+.general-content h1,
+.general-content h2,
+.general-content h3,
+.general-content h4,
+.general-content h5,
+.general-content h6 {
+  font-family: $display;
+  padding: 4rem 0;
+  margin: 0;
+}
+
 .general-content ul,
 .general-content ol {
   margin-bottom: 9rem;
@@ -43,8 +54,26 @@
   text-transform: uppercase;
 }
 
+.general-content p {
+  @apply leading-normal pb-4 m-0;
+  font-family: $serif;
+}
+
 .general-content img {
   height: auto;
+}
+
+.general-content a {
+  @apply text-green;
+}
+
+.general-content .aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.general-pagination > a {
+  width: calc(50% - 2rem);
 }
 
 .video {
@@ -78,35 +107,10 @@
   .general-content h5 {
     font-size: 20px;
   }
-}
+  .general-content h6 {
+    font-size: 20px;
+  }
 
-.general-content h1,
-.general-content h2,
-.general-content h3,
-.general-content h4,
-.general-content h5,
-.general-content h6 {
-  margin: 4rem 0;
-}
-
-.general-content p {
-  @apply leading-normal mb-4;
-}
-
-.general-content a {
-  @apply text-primary;
-}
-
-.general-content .aligncenter {
-  display: block;
-  margin: 0 auto;
-}
-
-.general-pagination > a {
-  width: calc(50% - 2rem);
-}
-
-@include media('>=#{$md}') {
   .general-pagination > a {
     width: auto;
 

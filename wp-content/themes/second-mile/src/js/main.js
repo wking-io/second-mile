@@ -9,7 +9,7 @@ const menuToggle = dom('.menu-toggle');
 const masthead = dom(`#${getAttr('aria-controls', menuToggle)}`);
 
 function whenPast(el, fn) {
-  return function(e) {
+  return function() {
     const { height } = el.getBoundingClientRect();
 
     if (window.scrollY > height) {
