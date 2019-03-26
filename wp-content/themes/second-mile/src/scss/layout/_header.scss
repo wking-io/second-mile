@@ -16,6 +16,7 @@
   &[data-header-fixed='true'] {
     position: fixed;
     top: 0;
+    background-color: $white;
 
     [data-style='background'] & {
       &[data-theme='green'] {
@@ -177,6 +178,11 @@ body .header[data-menu-open='true'] {
       fill: $white;
     }
 
+    .menu-item--contact > a:hover .contact-icon__fill {
+      fill: $white;
+      opacity: 0.75;
+    }
+
     .menu-toggle span {
       background-color: $white;
     }
@@ -311,6 +317,7 @@ body .header[data-menu-open='true'] {
     .header {
       .menu-item--cta > a:hover {
         background-color: $green;
+        color: $white;
       }
     }
   }
@@ -319,6 +326,7 @@ body .header[data-menu-open='true'] {
     .header {
       .menu-item--cta > a:hover {
         background-color: $yellow;
+        color: $white;
       }
     }
   }
@@ -327,6 +335,7 @@ body .header[data-menu-open='true'] {
     .header {
       .menu-item--cta > a:hover {
         background-color: $red;
+        color: $white;
       }
     }
   }
@@ -351,6 +360,18 @@ body .header[data-menu-open='true'] {
         color: $white;
         background-color: $black;
       }
+
+      .sub-menu-item a:hover {
+        color: $yellow;
+      }
+
+      .sub-menu-item:first-child a:hover {
+        color: $green;
+      }
+
+      .sub-menu-item:last-child a:hover {
+        color: $red;
+      }
     }
 
     &[data-theme='green'] {
@@ -361,6 +382,7 @@ body .header[data-menu-open='true'] {
 
         .menu-item--cta > a:hover {
           background-color: $green;
+          color: $white;
         }
       }
     }
@@ -373,6 +395,7 @@ body .header[data-menu-open='true'] {
 
         .menu-item--cta > a:hover {
           background-color: $yellow;
+          color: $white;
         }
       }
     }
@@ -385,6 +408,7 @@ body .header[data-menu-open='true'] {
 
         .menu-item--cta > a:hover {
           background-color: $red;
+          color: $white;
         }
       }
     }
@@ -431,6 +455,7 @@ body .header[data-menu-open='true'] {
     margin: 2rem 2rem 0 2rem;
 
     &[data-header-fixed='true'] {
+      background-color: $white;
       margin: 0;
     }
   }

@@ -14,6 +14,14 @@
       background-color: darken($green, 5%);
     }
   }
+
+  &--red {
+    @apply bg-red border-red;
+
+    &:hover {
+      background-color: darken($red, 5%);
+    }
+  }
 }
 
 .button-light {
@@ -23,6 +31,18 @@
 
   &:hover {
     @apply bg-transparent text-white;
+  }
+
+  &--green {
+    @apply text-green;
+  }
+
+  &--yellow {
+    @apply text-yellow;
+  }
+
+  &--red {
+    @apply text-red;
   }
 }
 
@@ -91,35 +111,3 @@
     }
   }
 }
-
-// .button-outline-primary {
-//   @apply inline-block no-underline font-bold text-black py-3 px-8 border border-primary text-center;
-
-//   &:hover {
-//     @apply bg-primary text-white;
-//   }
-// }
-
-// .button-outline-dark {
-//   @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black text-center;
-
-//   &:hover {
-//     @apply bg-black text-white;
-//   }
-// }
-
-// .button-outline-light {
-//   @apply inline-block no-underline font-bold text-white py-3 px-8 border border-white text-center;
-
-//   &:hover {
-//     @apply bg-white text-black;
-//   }
-// }
-
-// .button-link-primary {
-//   @apply inline-block underline font-bold text-primary border-0;
-
-//   &:hover {
-//     @apply no-underline;
-//   }
-// }

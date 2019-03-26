@@ -23,6 +23,42 @@
 		<?php if ( is_page( 'contact' ) ) {
 			gravity_form_enqueue_scripts( 1, false );
 		} ?>
+
+		<?php if ( is_single() && ! has_category( 'parent-parties' ) ) :
+			global $post;
+			$ministry_cat = get_main_category( $post->ID );
+			error_log( print_r( $ministry_cat, true ) );
+			$ministry_color = secondmile_get_color( strtolower( $ministry_cat ), 'rgb' );
+			error_log( print_r( $ministry_color, true ) );
+			$ministry_bg = get_field('ministry_image');
+			
+			if ( ! empty( $ministry_bg ) ) :
+				ob_start(); ?>
+
+				<link rel="preload" href="<?php echo $ministry_bg['url']; ?>" as="image media="(min-width: 992px)">
+				<link rel="preload" href="<?php echo $ministry_bg['sizes']['large']; ?>" as="image media="(max-width: 992px)">
+					
+				<style>
+					.ministry-bg {
+							background-image: linear-gradient(to bottom, rgba(<?php echo $ministry_color; ?>, 1), rgba(<?php echo $ministry_color; ?>, 0.9) 20%, rgba(<?php echo $ministry_color; ?>, 0.7) 80%, rgba(<?php echo $ministry_color; ?>, 0.5)), url(<?php echo $ministry_bg['sizes']['large']; ?>);
+					}
+
+					@media screen and (min-width: 768px) {
+							.ministry-bg {
+									background-image: linear-gradient(to right, rgba(<?php echo $ministry_color; ?>, 1), rgba(<?php echo $ministry_color; ?>, 0.9) 20%, rgba(<?php echo $ministry_color; ?>, 0.7) 80%, rgba(<?php echo $ministry_color; ?>, 0.5)), url(<?php echo $ministry_bg['sizes']['large']; ?>);
+							}
+					}
+
+					@media screen and (min-width: 992px) {
+							.ministry-bg {
+									background-image: linear-gradient(to right, rgba(<?php echo $ministry_color; ?>, 1), rgba(<?php echo $ministry_color; ?>, 0.9) 20%, rgba(<?php echo $ministry_color; ?>, 0.7) 80%, rgba(<?php echo $ministry_color; ?>, 0.5)), url(<?php echo $ministry_bg['url']; ?>);
+							}
+					}
+				</style>
+				<?php echo ob_get_clean();
+			endif;
+		endif; ?>
+
 		<?php wp_head(); ?>
 	</head>
 

@@ -40,10 +40,10 @@ function secondmile_page_attributes() {
     $theme = 'red';
   endif;
 
-  if ( has_term( 'dark', 'background' ) || is_singular( 'post' ) ) :
-    $style = 'background';
-  elseif ( is_front_page() || is_home() || is_page() || is_category( 'parent-parties' ) ) :
+  if ( is_front_page() || is_home() || ( is_page() && ! has_term( 'dark', 'background' ) ) || has_category( 'parent-parties' ) ) :
     $style = 'basic';
+  elseif ( has_term( 'dark', 'background' ) || is_singular( 'post' ) ) :
+    $style = 'background';
   elseif ( is_category() ) :
     $style = 'border';
   endif;
