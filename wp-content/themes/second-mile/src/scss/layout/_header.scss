@@ -1,14 +1,21 @@
 .header {
+  @apply px-6 py-4;
+  background-color: transparent;
+
   &[data-header-fixed='false'] {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
+
+    [data-theme='white'] &.header {
+      background-color: $black;
+    }
   }
 
   &[data-header-fixed='true'] {
     position: fixed;
+    top: 0;
 
     [data-style='background'] & {
       &[data-theme='green'] {
@@ -36,9 +43,6 @@
       }
     }
   }
-
-  @apply px-6 py-4;
-  background-color: $white;
 
   .logo-name__fill {
     fill: $black;
@@ -387,6 +391,10 @@ body .header[data-menu-open='true'] {
 
     &[data-theme='white'] {
       .header {
+        .menu-item > a:hover .contact-icon__fill {
+          fill: $green;
+        }
+
         .sub-menu {
           background-color: $white;
           box-shadow: 0.5rem 1rem 5rem rgba($black, 0.3);
@@ -399,6 +407,18 @@ body .header[data-menu-open='true'] {
         .sub-menu-item > a {
           color: $black;
         }
+
+        .sub-menu-item a:hover {
+          color: $yellow;
+        }
+
+        .sub-menu-item:first-child a:hover {
+          color: $green;
+        }
+
+        .sub-menu-item:last-child a:hover {
+          color: $red;
+        }
       }
     }
   }
@@ -408,6 +428,11 @@ body .header[data-menu-open='true'] {
 [data-style='border'] {
   .header {
     width: calc(100% - 4rem);
+    margin: 2rem 2rem 0 2rem;
+
+    &[data-header-fixed='true'] {
+      margin: 0;
+    }
   }
 }
 
@@ -415,6 +440,11 @@ body .header[data-menu-open='true'] {
   [data-style='border'] {
     .header {
       width: calc(100% - 8rem);
+      margin: 4rem 4rem 0 4rem;
+
+      &[data-header-fixed='true'] {
+        margin: 0;
+      }
     }
   }
 }

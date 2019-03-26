@@ -107,7 +107,7 @@ $home_ministries     = array(
 <section>
   <div class="flex flex-col items-start lg:flex-row py-8 mt-6 lg:w-9/10 lg:mx-auto">
     <?php if ( ! empty( $home_who_we_are ) ) : ?>
-      <div class="stack-box flex-no-shrink">
+      <div class="stack-box flex-no-shrink lg:mt-8">
         <div class="stack-box__content sm:flex sm:items-end lg:block">
           <h3 class="stack-box__title uppercase text-2xl font-display mb-4 sm:mb-0 sm:mr-6 lg:mb-4 lg:mr-0"><?php echo $home_who_we_are['title']; ?></h3>
           <div class="font-serif text-sm leading-normal mb-0">
@@ -125,7 +125,7 @@ $home_ministries     = array(
         $pp_excerpt = get_field( 'home_page_description', $home_parent_parties['post'] );
       ?>
 
-      <div class="px-6 py-8 lg:ml-8 lg:pt-0 flex-1">
+      <div class="px-6 py-8 lg:ml-8 flex-1">
         <div class="w-64 py-8 lg:pt-0 lg:mb-8 xl:py-0 relative">
           <?php echo secondmile_pp_logo( 'vertical' ); ?>
           <div class="parent-accent"></div>

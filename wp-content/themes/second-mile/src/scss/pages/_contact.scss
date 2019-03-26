@@ -13,6 +13,10 @@
 
 .sm-contact-form {
   & .gform_body {
+    & .gform_fields li.gfield {
+      padding: 0;
+    }
+
     & .sm-contact-form__input {
       width: 100%;
       margin: 0 0 6rem 0;
@@ -36,7 +40,7 @@
         width: 100%;
         background-color: transparent;
         padding: 8rem 3.5rem 4rem;
-        border: 1px solid rgba( $white, 0.25 );
+        border: 1px solid rgba($white, 0.25);
         border-radius: 1rem;
         color: $white;
         line-height: 1;
@@ -55,7 +59,7 @@
         height: 120px;
         background-color: transparent;
         padding: 8rem 3.5rem 4rem;
-        border: 1px solid rgba( $white, 0.25 );
+        border: 1px solid rgba($white, 0.25);
         border-radius: 1rem;
         color: $white;
         appearance: none;
@@ -81,19 +85,9 @@
     margin-top: 0;
 
     & input[type='submit'] {
-      text-decoration: none;
-      display: block;
-      width: 100%;
-      padding: 3rem 12rem;
-      margin: 0;
-      border: none;
-      border-radius: 1rem;
-      text-align: center;
-      font-weight: bold;
-      text-transform: uppercase;
-      color: $white;
-      border-color: $white;
-      background-color: $green;
+      @apply block w-full no-underline font-bold px-8 relative text-center text-white font-display uppercase rounded text-sm border bg-green border-green m-0;
+      padding-top: 4rem;
+      padding-bottom: 3.5rem;
       cursor: pointer;
       appearance: none;
 
@@ -128,10 +122,9 @@
 
 @include media('>=#{$lg}') {
   .contact-content {
-
     &:after {
       content: '';
-      background-image: url("../fonts/contact.svg");
+      background-image: url('../fonts/contact.svg');
       left: calc(100% - 18px);
       position: absolute;
       height: 100%;

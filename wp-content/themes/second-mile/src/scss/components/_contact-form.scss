@@ -79,21 +79,23 @@
     margin-top: 0;
 
     & input[type='submit'] {
-      text-decoration: none;
-      display: block;
-      width: 100%;
-      padding: 4rem 12rem;
-      margin: 0;
-      border: 1px solid $white;
-      text-align: center;
-      color: $white;
-      border-color: $white;
-      background-color: transparent;
-      cursor: pointer;
+      @apply block no-underline font-bold px-8 relative text-center text-white font-display uppercase rounded text-sm border bg-green border-green;
+      padding-top: 4rem;
+      padding-bottom: 3.5rem;
+      // text-decoration: none;
+      // display: block;
+      // width: 100%;
+      // padding: 4rem 12rem;
+      // margin: 0;
+      // border: 1px solid $white;
+      // text-align: center;
+      // color: $white;
+      // border-color: $white;
+      // background-color: transparent;
+      // cursor: pointer;
 
       &:hover {
-        color: $black;
-        background-color: $white;
+        background-color: darken($green, 5%);
       }
 
       &:disabled {
