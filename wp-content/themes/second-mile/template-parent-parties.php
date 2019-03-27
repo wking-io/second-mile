@@ -60,7 +60,7 @@ $ministry_bottom_donate_text = get_field( 'bottom_donate_button_text' );
       <ul class="list-reset flex flex-row flex-wrap items-center justify-center -mx-4">
         <?php foreach ( $ministry_highlights as $highlight ) : ?>
           <li class="pb-8 mb-8 px-4 text-center min-w-2xl max-w-4xl">
-            <img class="mb-6" src="<?php echo $highlight['icon'] ?>" alt="">
+            <img class="mb-8 w-32" src="<?php echo $highlight['icon'] ?>" alt="">
             <h4 class="text-md font-display font-bold uppercase mb-3"><?php echo $highlight['title'] ?></h4>
             <div class="font-serif leading-normal"><?php echo $highlight['description'] ?></div>
           </li>
