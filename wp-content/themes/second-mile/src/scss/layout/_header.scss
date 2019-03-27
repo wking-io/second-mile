@@ -17,32 +17,6 @@
     position: fixed;
     top: 0;
     background-color: $white;
-
-    [data-style='background'] & {
-      &[data-theme='green'] {
-        .header {
-          background-color: $green;
-        }
-      }
-
-      &[data-theme='yellow'] {
-        .header {
-          background-color: $yellow;
-        }
-      }
-
-      &[data-theme='red'] {
-        .header {
-          background-color: $red;
-        }
-      }
-
-      &[data-theme='white'] {
-        .header {
-          background-color: $black;
-        }
-      }
-    }
   }
 
   .logo-name__fill {
@@ -116,6 +90,32 @@
 
   .sub-menu-item:last-child a:hover {
     color: $red;
+  }
+}
+
+[data-style='background'] {
+  &[data-theme='green'] {
+    .header[data-header-fixed='true'] {
+      background-color: $green;
+    }
+  }
+
+  &[data-theme='yellow'] {
+    .header[data-header-fixed='true'] {
+      background-color: $yellow;
+    }
+  }
+
+  &[data-theme='red'] {
+    .header[data-header-fixed='true'] {
+      background-color: $red;
+    }
+  }
+
+  &[data-theme='white'] {
+    .header[data-header-fixed='true'] {
+      background-color: $black;
+    }
   }
 }
 
