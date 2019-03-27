@@ -45,11 +45,11 @@ $home_ministries     = array(
       <p class="font-bold lg:text-sm"><cite class="roman"><?php echo $verse_location; ?></cite></p>
     </aside>
   <?php endif; ?>
-  <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row' : ''; ?> mb-8 lg">
+  <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row md:py-8' : ''; ?> mb-8 lg">
     <?php if ( $home_has_video ) : ?>
-      <div class="hero__video">
+      <div class="hero__video md:w-1/2 mb-8 md:mb-0 md:mr-8 rounded overflow-hidden flex-no-shrink">
         <?php 
-          echo cl_video_tag( $tb_purpose_video, 
+          echo cl_video_tag( $home_video, 
             array(
               "loop" => true,
               "autoplay" => true,
@@ -73,12 +73,12 @@ $home_ministries     = array(
       </ul>
     <?php endif; ?>
     <?php if ( ! empty( $home_mission ) && ! empty( $home_vision ) ) : ?>
-      <div class="flex flex-col md:flex-row md:-mx-4 pt-4">
-        <div class="mb-8 md:mb-0 md:mx-4">
+      <div class="flex flex-col<?php echo $home_has_video ? '' : ' md:flex-row md:-mx-4 pt-4'; ?>">
+        <div class="mb-8 <?php echo $home_has_video ? '' : 'md:mb-0 md:mx-4'; ?>">
           <h2 class="text-base uppercase text-display mb-3 lg:text-md"><?php echo $home_mission['title']; ?></h2>
           <div class="font-serif leading-normal text-sm lg:text-base"><?php echo $home_mission['description']; ?></div>
         </div>
-        <div class="md:mx-4">
+        <div class="<?php echo $home_has_video ? '' : 'md:mx-4'; ?>">
           <h2 class="text-base uppercase text-display mb-3 lg:text-md"><?php echo $home_vision['title']; ?></h2>
           <div class="font-serif leading-normal text-sm lg:text-base"><?php echo $home_vision['description']; ?></div>
         </div>

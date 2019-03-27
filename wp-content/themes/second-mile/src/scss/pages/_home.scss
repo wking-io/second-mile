@@ -2,6 +2,16 @@
   font-size: 6.8vw;
 }
 
+.hero__video {
+  box-shadow: 0.5rem 1rem 5rem rgba($black, 0.3);
+  & video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .ministry-count {
   font-size: 25rem;
 }

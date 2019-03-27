@@ -18,11 +18,25 @@ $category_color = secondmile_get_color( $category->slug );
     <h3 class="text-<?php echo $category_color; ?> uppercase font-display font-bold mb-4 lg:text-md"><?php echo $category->name; ?></h3>
     <h2 class="font-display uppercase font-bold text-xl leading-normal mb-6 md:text-3xl lg:text-4xl md:w-4/5"><?php echo $category_title; ?></h2>
     <p class="leading-normal border-l-4 border-grey pl-4 text-md md:text-lg md:w-4/5 lg:w-3/5 mb-8"><?php echo $category_subtitle; ?></p>
-    <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-col lg:flex-row <?php echo $category_has_video ? 'pt-6 lg:items-center' : ''; ?>">
       <?php if ( $category_has_video ) : ?>
-        <div></div>
+        <div class="category-video mb-8 lg:mb-0 lg:mr-8 rounded overflow-hidden flex-no-shrink">
+          <?php 
+            echo cl_video_tag( $category_video, 
+              array(
+                "loop" => true,
+                "autoplay" => true,
+                "muted" => true,
+                "preload" => true,
+                "fallback_content" => "Your browser does not support HTML5 video tags",
+                "width" => 600,
+                "crop" => "fit",
+              )
+            ); 
+          ?>
+        </div>
       <?php endif; ?>
-      <div class="general-content md:columns-2 md:column-gap-8"><?php echo $category_description; ?></div>
+      <div class="general-content <?php echo $category_has_video ? '' : 'md:columns-2 md:column-gap-8'; ?>"><?php echo $category_description; ?></div>
     </div>
   </section>
   <section class="wrapper pt-8 md:pt-jumbo pb-jumbo">
