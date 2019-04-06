@@ -76,11 +76,11 @@ $home_ministries     = array(
       <div class="flex flex-col<?php echo $home_has_video ? '' : ' md:flex-row md:-mx-4 pt-4'; ?>">
         <div class="mb-8 <?php echo $home_has_video ? '' : 'md:mb-0 md:mx-4'; ?>">
           <h2 class="text-base uppercase font-display mb-3 lg:text-md"><?php echo $home_mission['title']; ?></h2>
-          <div class="font-serif leading-normal text-sm lg:text-base"><?php echo $home_mission['description']; ?></div>
+          <div class="font-serif leading-normal text-sm lg:text-body"><?php echo $home_mission['description']; ?></div>
         </div>
         <div class="<?php echo $home_has_video ? '' : 'md:mx-4'; ?>">
           <h2 class="text-base uppercase font-display mb-3 lg:text-md"><?php echo $home_vision['title']; ?></h2>
-          <div class="font-serif leading-normal text-sm lg:text-base"><?php echo $home_vision['description']; ?></div>
+          <div class="font-serif leading-normal text-sm lg:text-body"><?php echo $home_vision['description']; ?></div>
         </div>
       </div>
     <?php endif; ?>
@@ -126,15 +126,15 @@ $home_ministries     = array(
       ?>
 
       <div class="px-6 py-8 lg:ml-8 flex-1">
-        <div class="w-64 py-8 lg:pt-0 lg:mb-8 xl:py-0 relative">
-          <?php echo secondmile_pp_logo( 'vertical' ); ?>
+        <div class="w-64 py-8 lg:py-0 lg:mb-8 relative">
+          <a href="<?php echo get_the_permalink( $home_parent_parties['post'] ); ?>"><?php echo secondmile_pp_logo( 'vertical' ); ?></a>
           <div class="parent-accent"></div>
         </div>
         <div class="xl:flex xl:flex-row-reverse parent-content">
           <?php if ( ! empty( $pp_stats ) ) : ?>
-            <ul class="flex xl:flex-col mb-8 -mx-6 lg:mx-0 lg:mb-0 parent-stats">
+            <ul class="flex xl:flex-col lg:p-0 mb-8 -mx-6 xl:mx-0 lg:mb-0 parent-stats">
               <?php foreach ( $pp_stats as $stat ) : ?>
-                <li class="px-6 parent-stats-item lg:mb-8 lg:text-right">
+                <li class="px-6 parent-stats-item lg:mb-8 xl:text-right">
                   <p class="font-bold text-xl font-thin mb-1"><?php echo $stat['value']; ?></p>
                   <p class="font-bold text-sm"><?php echo $stat['title']; ?></p>
                 </li>
@@ -146,7 +146,7 @@ $home_ministries     = array(
               <?php echo $pp_excerpt; ?>
             </div>
             <p>
-              <a class="button-outline button-outline--yellow" href="<?php echo get_the_permalink( $home_parent_parties['post'] ); ?>)"><?php echo $home_parent_parties['link_text']; ?></a>
+              <a class="button-outline button-outline--yellow" href="<?php echo get_the_permalink( $home_parent_parties['post'] ); ?>"><?php echo $home_parent_parties['link_text']; ?></a>
             </p>
           </div>
         </div>

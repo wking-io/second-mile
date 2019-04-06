@@ -44,7 +44,7 @@ $ministries     = array(
                   <div>
                     <h2 class="uppercase font-display text-md mb-3 lg:text-xl tracking-wide"><?php echo $data['title']; ?></h2>
                     <div class="leading-normal mb-6 md:text-md lg:mb-8"><?php echo $data['excerpt']; ?></div>
-                    <p class=""><a class="font-bold uppercase text-white hover:no-underline lg:text-md" href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?></a></p>
+                    <p class=""><a class="font-bold uppercase text-white hover:no-underline" href="<?php echo site_url( '/category/' . $data['title'] ); ?>">View <?php echo $data['title']; ?> Ministry</a></p>
                   </div>
                 </li>
               <?php endif; ?>
@@ -65,7 +65,7 @@ $ministries     = array(
       <?php if ( ! empty( $our_dream ) ) : ?>
         <section class="p-8 text-center">
           <h2 class="text-xl font-display uppercase mb-6 pt-8"><?php echo $our_dream['title']; ?></h2>
-          <div class="leading-normal font-serif mb-8"><?php echo $our_dream['description']; ?></div>
+          <div class="leading-normal font-serif text-body mb-8"><?php echo $our_dream['description']; ?></div>
           <ul class="list-reset flex justify-center items-end pb-8 -mx-4 sm:-mx-8">
             <?php foreach ( $our_dream['stats'] as $i => $stat ) : ?>
               <li class="px-4 sm:px-8">

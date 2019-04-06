@@ -1,5 +1,5 @@
 .hero__title {
-  font-size: 5.5vw;
+  font-size: 5.1vw;
 }
 
 .hero__video {
@@ -102,6 +102,12 @@
   }
 }
 
+@include media('>=#{$sm}', '<=#{$lg}') {
+  .hero__title {
+    font-size: 5.5vw;
+  }
+}
+
 @include media('>=#{$md}') {
   .hero__title {
     font-size: 5.75vw;
@@ -165,9 +171,7 @@
   .ministry-count {
     font-size: 40rem;
   }
-}
 
-@include media('>=#{$xl}') {
   .parent-accent {
     width: 60vw;
     height: 0.5rem;
@@ -175,4 +179,7 @@
     top: 50%;
     transform: translateY(-50%);
   }
+}
+
+@include media('>=#{$xl}') {
 }

@@ -30,7 +30,7 @@ if ( ! is_page( 'who-we-are' ) ) {
 	<div class="wrapper w-full text-center leading-normal lg:text-left flex flex-col <?php echo ! is_page( 'who-we-are' ) ? 'lg:flex-row' : ''; ?> justify-center items-center mb-4" >
 		<p class="mb-1 <?php echo ! is_page( 'who-we-are' ) ? 'lg:mb-0' : ''; ?>"><?php the_field('company_address', 'options'); ?></p>
 		<p class="footer__bar"></p>
-		<p class="mb-4 <?php echo ! is_page( 'who-we-are' ) ? 'lg:mb-0' : ''; ?>"><?php the_field('company_phone_number', 'options'); ?></p>
+		<p class="phone mb-4 <?php echo ! is_page( 'who-we-are' ) ? 'lg:mb-0' : ''; ?>"><?php the_field('company_phone_number', 'options'); ?></p>
 		<p class="footer__bar hidden <?php echo ! is_page( 'who-we-are' ) ? 'lg:block' : ''; ?>"></p>
 		<p class="w-3 <?php echo ! is_page( 'who-we-are' ) ? 'lg:w-2' : ''; ?>">
 			<a href="<?php the_field('company_facebook_page', 'options'); ?>">

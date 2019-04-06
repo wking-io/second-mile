@@ -66,7 +66,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
 	<header id="masthead" class="header w-full flex justify-between items-center z-50" role="banner" data-menu-open="false" data-header-fixed="false">
-		<h1 class="branding relative z-50 h-6">
+		<h1 class="branding relative z-50 h-8">
 			<a class="flex items-center h-full" href="<?php echo home_url(); ?>">
 				<?php echo do_shortcode( '[logo classname="h-full mr-6"]' ); ?>
 				<?php echo do_shortcode( '[name classname="h-4"]' ); ?>

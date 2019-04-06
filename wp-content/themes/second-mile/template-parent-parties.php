@@ -21,12 +21,12 @@ $ministry_bottom_donate_text = get_field( 'bottom_donate_button_text' );
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-  <section class="mt-nav flex flex-col lg:flex-row lg:items-end lg:pb-jumbo lg:py-8">
+  <section class="mt-nav flex flex-col lg:flex-row lg:items-center lg:pb-jumbo lg:py-8">
     <div class="mb-4 sm:mb-8 lg:w-1/2 lg:mr-8 lg:mb-0 flex flex-col lg:flex-col-reverse lg:justify-end lg:flex-no-shrink">
-      <div class="aspect-5:3 overflow-hidden sm:mb-8"><img class="w-full absolute pin-t pin-l" src="<?php echo $ministry_image['url']; ?>" alt=""></div>
-      <div class="wrapper lg:w-full lg:max-w-5xl lg:mr-0 lg:ml-auto my-8"><div class="w-4/5 max-w-4xl lg:max-w-full lg:w-full"><?php echo secondmile_pp_logo( 'vertical' ); ?></div></div>
+      <div class="aspect-4:3 overflow-hidden sm:mb-8 lg:mb-0"><img class="w-full absolute pin-t pin-l" src="<?php echo $ministry_image['url']; ?>" alt=""></div>
     </div>
     <div class="wrapper lg:px-8 lg:max-w-6xl mx-auto">
+      <div class="wrapper lg:w-full lg:max-w-3xl lg:ml-0 lg:mr-auto my-8"><div class="w-4/5 max-w-4xl lg:max-w-full lg:w-full"><?php echo secondmile_pp_logo( 'vertical' ); ?></div></div>
       <?php if ( ! empty( $ministry_stat ) ) : ?>
         <div class="mb-8">
           <p class="font-thin font-bold text-2xl lg:text-3xl mb-2"><?php echo $ministry_stat['value']; ?></p>
@@ -62,7 +62,7 @@ $ministry_bottom_donate_text = get_field( 'bottom_donate_button_text' );
           <li class="pb-8 mb-8 px-4 text-center min-w-2xl max-w-4xl">
             <img class="mb-8 w-32" src="<?php echo $highlight['icon'] ?>" alt="">
             <h4 class="text-md font-display font-bold uppercase mb-3"><?php echo $highlight['title'] ?></h4>
-            <div class="font-serif leading-normal"><?php echo $highlight['description'] ?></div>
+            <div class="font-serif text-body leading-normal"><?php echo $highlight['description'] ?></div>
           </li>
         <?php endforeach; ?>
       </ul>
