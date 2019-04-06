@@ -14,6 +14,9 @@ include 'inc/setup.php';
 // Customizations
 include 'inc/customize.php';
 
+// Favicons
+include 'inc/favicons.php';
+
 // Setup
 include 'inc/pages-taxonomy.php';
 

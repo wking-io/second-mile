@@ -1,5 +1,5 @@
 .hero__title {
-  font-size: 6.8vw;
+  font-size: 5.5vw;
 }
 
 .hero__video {
@@ -103,6 +103,10 @@
 }
 
 @include media('>=#{$md}') {
+  .hero__title {
+    font-size: 5.75vw;
+  }
+
   .parent-stats-item {
     display: block;
   }

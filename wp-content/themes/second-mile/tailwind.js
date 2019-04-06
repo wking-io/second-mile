@@ -114,7 +114,8 @@ module.exports = {
 
   fonts: {
     display: [
-      'League Spartan',
+      'league-spartan',
+      'century-gothic',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
@@ -128,7 +129,7 @@ module.exports = {
       'sans-serif',
     ],
     sans: [
-      'Century Gothic',
+      'century-gothic',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
@@ -142,7 +143,7 @@ module.exports = {
       'sans-serif',
     ],
     serif: [
-      'Libre Baskerville',
+      'libre-baskerville',
       'Constantia',
       'Lucida Bright',
       'Lucidabright',
@@ -156,7 +157,7 @@ module.exports = {
     ],
     thin: [
       'Oswald',
-      'League Spartan',
+      'league-spartan',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
@@ -431,7 +432,7 @@ module.exports = {
     32: '32rem', // 128px
     48: '48rem', // 192px
     64: '64rem', // 256px
-    'jumbo': '160rem',
+    jumbo: '160rem',
     '17/20': '85vh',
     '2/3': '75vh',
     '9/10': '90%',

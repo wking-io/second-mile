@@ -38,7 +38,7 @@ $home_ministries     = array(
 
 <section class="bg-pattern px-6 lg:px-8 pt-nav pb-8 relative">
 
-  <h1 class="hero__title text-display uppercase pt-jumbo leading-tight mb-4 lg:mb-8 lg:px-4"><?php echo do_shortcode( $home_title ); ?></h1>
+  <h1 class="hero__title font-display uppercase pt-jumbo leading-tight mb-4 lg:mb-8 lg:px-4 tracking-wide"><?php echo do_shortcode( $home_title ); ?></h1>
   <?php if ( ! empty( $verse_text ) && ! empty( $verse_location ) ) : ?>
     <aside class="hero__verse mb-8 lg:absolute lg:flex lg:items-center">
       <p class="hero__verse__text leading-normal mb-2 lg:font-bold lg:mb-0 lg:text-sm"><?php echo $verse_text; ?></p>
@@ -75,11 +75,11 @@ $home_ministries     = array(
     <?php if ( ! empty( $home_mission ) && ! empty( $home_vision ) ) : ?>
       <div class="flex flex-col<?php echo $home_has_video ? '' : ' md:flex-row md:-mx-4 pt-4'; ?>">
         <div class="mb-8 <?php echo $home_has_video ? '' : 'md:mb-0 md:mx-4'; ?>">
-          <h2 class="text-base uppercase text-display mb-3 lg:text-md"><?php echo $home_mission['title']; ?></h2>
+          <h2 class="text-base uppercase font-display mb-3 lg:text-md"><?php echo $home_mission['title']; ?></h2>
           <div class="font-serif leading-normal text-sm lg:text-base"><?php echo $home_mission['description']; ?></div>
         </div>
         <div class="<?php echo $home_has_video ? '' : 'md:mx-4'; ?>">
-          <h2 class="text-base uppercase text-display mb-3 lg:text-md"><?php echo $home_vision['title']; ?></h2>
+          <h2 class="text-base uppercase font-display mb-3 lg:text-md"><?php echo $home_vision['title']; ?></h2>
           <div class="font-serif leading-normal text-sm lg:text-base"><?php echo $home_vision['description']; ?></div>
         </div>
       </div>

@@ -1,6 +1,11 @@
 import '../scss/main.scss';
 import '../images/contact.svg';
 import '../images/topography.svg';
+import '../fonts/century-gothic-regular.ttf';
+import '../fonts/century-gothic-bold.ttf';
+import '../fonts/league-spartan-bold.otf';
+import '../fonts/libre-baskerville-bold.otf';
+import '../fonts/libre-baskerville-regular.otf';
 import { dom } from './modules/dom';
 import { eventOn } from './modules/event';
 import { getAttr, setAttr, attrToBool } from './modules/attr';

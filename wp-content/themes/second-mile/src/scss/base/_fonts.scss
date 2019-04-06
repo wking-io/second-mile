@@ -1,14 +1,39 @@
-// @font-face {
-//   font-family: 'AvenirTB';
-//   src: url('../fonts/AvenirNextLTPro-Regular.eot');
-//   src: local('Avenir Next LT Pro Regular'), local('AvenirNextLTPro-Regular'),
-//     url('../fonts/AvenirNextLTPro-Regular.eot?#iefix')
-//       format('embedded-opentype'),
-//     url('../fonts/AvenirNextLTPro-Regular.woff2') format('woff2'),
-//     url('../fonts/AvenirNextLTPro-Regular.woff') format('woff'),
-//     url('../fonts/AvenirNextLTPro-Regular.ttf') format('truetype'),
-//     url('../fonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular')
-//       format('svg');
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'century-gothic';
+  src: url('../fonts/century-gothic-regular.ttf');
+  src: url('../fonts/century-gothic-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'century-gothic';
+  src: url('../fonts/century-gothic-bold.ttf');
+  src: url('../fonts/century-gothic-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'league-spartan';
+  src: url('../fonts/league-spartan-bold.otf');
+  src: url('../fonts/league-spartan-bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'libre-baskerville';
+  src: url('../fonts/libre-baskerville-regular.otf');
+  src: url('../fonts/libre-baskerville-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'libre-baskerville';
+  src: url('../fonts/libre-baskerville-bold.otf');
+  src: url('../fonts/libre-baskerville-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: bold;
+}
