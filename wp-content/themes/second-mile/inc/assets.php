@@ -55,7 +55,7 @@ if ( ! function_exists( 'secondmile_styles' ) ) :
 
 	function secondmile_styles() {
  
-			wp_register_style( 'sm-google-fonts', 'https://fonts.googleapis.com/css?family=Oswald:400,700', false );
+			wp_register_style( 'sm-google-fonts', 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Oswald:400,700', false );
 			wp_enqueue_style( 'sm-google-fonts' );
 
 	    wp_register_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0', false );

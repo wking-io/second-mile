@@ -143,7 +143,7 @@ module.exports = {
       'sans-serif',
     ],
     serif: [
-      'libre-baskerville',
+      'Libre Baskerville',
       'Constantia',
       'Lucida Bright',
       'Lucidabright',

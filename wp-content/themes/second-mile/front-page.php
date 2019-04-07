@@ -29,7 +29,7 @@ $home_ministries     = array(
   array(
     'title'   => 'family',
     'excerpt' => get_field('family_excerpt', 'options'),
-    'bg'      => get_field('education_excerpt_image', 'options'),
+    'bg'      => get_field('family_excerpt_image', 'options'),
     'color'   => '237, 62, 55',
   ),
 );
