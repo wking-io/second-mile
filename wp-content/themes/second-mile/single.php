@@ -15,8 +15,8 @@ $ministry_stat = get_field( 'ministry_stat' );
     $ministry_category = get_main_category( get_the_ID(), 'category' ); 
     $ministry_color = secondmile_get_color( strtolower( $ministry_category ) );
   ?>
-  <section class="ministry-bg bg-no-repeat bg-cover bg-<?php echo $ministry_color; ?> text-white min-h-screen">
-    <div class="wrapper py-nav flex flex-col justify-center min-h-screen">
+  <section class="ministry-bg bg-no-repeat bg-cover bg-fixed bg-<?php echo $ministry_color; ?> text-white min-h-screen">
+    <div class="wrapper py-nav flex flex-col justify-center min-h-screen" data-fade-in>
       <h3 class="pt-jumbo uppercase font-display font-bold mb-4 lg:text-md"><?php echo $ministry_category; ?></h3>
       <h2 class="font-display uppercase font-bold text-xl leading-normal mb-6 md:text-3xl lg:text-4xl md:w-4/5"><?php echo the_title(); ?></h2>
       <p class="ministry-subtitle leading-normal border-l-4 pl-4 text-md md:text-lg md:w-4/5 mb-8"><?php echo $ministry_subtitle; ?></p>
