@@ -37,53 +37,54 @@ $home_ministries     = array(
 ?>
 
 <section class="bg-pattern px-6 lg:px-8 pt-nav pb-8 relative">
-
-  <h1 class="hero__title font-display uppercase pt-jumbo leading-tight mb-4 lg:mb-8 lg:px-4 tracking-wide"><?php echo do_shortcode( $home_title ); ?></h1>
-  <?php if ( ! empty( $verse_text ) && ! empty( $verse_location ) ) : ?>
-    <aside class="hero__verse mb-8 lg:absolute lg:flex lg:items-center">
-      <p class="hero__verse__text leading-normal mb-2 lg:font-bold lg:mb-0 lg:text-sm"><?php echo $verse_text; ?></p>
-      <p class="font-bold lg:text-sm"><cite class="roman"><?php echo $verse_location; ?></cite></p>
-    </aside>
-  <?php endif; ?>
-  <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row md:py-8' : ''; ?> mb-8 lg">
-    <?php if ( $home_has_video ) : ?>
-      <div class="hero__video md:w-1/2 mb-8 md:mb-0 md:mr-8 rounded overflow-hidden flex-no-shrink">
-        <?php 
-          echo cl_video_tag( $home_video, 
-            array(
-              "loop" => true,
-              "autoplay" => true,
-              "muted" => true,
-              "preload" => true,
-              "fallback_content" => "Your browser does not support HTML5 video tags",
-              "width" => 500,
-              "crop" => "fit",
-            )
-          ); 
-        ?>
-      </div>
-    <?php elseif ( ! empty( $home_stats ) ) : ?>
-      <ul class="list-reset flex justify-center lg:justify-between -mx-3 py-8 lg:mb-4">
-        <?php foreach ( $home_stats as $i => $stat ) : ?>
-          <li class="text-center lg:text-left flex-1 px-3">
-            <p class="font-bold text-lg font-thin mb-1 lg:text-2xl"><?php echo $stat['stat_value']; ?></p>
-            <p class="font-bold text-xs lg:text-sm"><?php echo $stat['stat_title']; ?></p>
-          </li>
-        <?php endforeach; ?>
-      </ul>
+  <div data-fade-in>
+    <h1 class="hero__title font-display uppercase pt-jumbo leading-tight mb-4 lg:mb-8 lg:px-4 tracking-wide"><?php echo do_shortcode( $home_title ); ?></h1>
+    <?php if ( ! empty( $verse_text ) && ! empty( $verse_location ) ) : ?>
+      <aside class="hero__verse mb-8 lg:absolute lg:flex lg:items-center">
+        <p class="hero__verse__text leading-normal mb-2 lg:font-bold lg:mb-0 lg:text-sm"><?php echo $verse_text; ?></p>
+        <p class="font-bold lg:text-sm"><cite class="roman"><?php echo $verse_location; ?></cite></p>
+      </aside>
     <?php endif; ?>
-    <?php if ( ! empty( $home_mission ) && ! empty( $home_vision ) ) : ?>
-      <div class="flex flex-col<?php echo $home_has_video ? '' : ' md:flex-row md:-mx-4 pt-4'; ?>">
-        <div class="mb-8 <?php echo $home_has_video ? '' : 'md:mb-0 md:mx-4'; ?>">
-          <h2 class="text-base uppercase font-display mb-3 lg:text-md"><?php echo $home_mission['title']; ?></h2>
-          <div class="font-serif leading-normal text-sm lg:text-body"><?php echo $home_mission['description']; ?></div>
+    <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row md:py-8' : ''; ?> mb-8 lg">
+      <?php if ( $home_has_video ) : ?>
+        <div class="hero__video md:w-1/2 mb-8 md:mb-0 md:mr-8 rounded overflow-hidden flex-no-shrink">
+          <?php 
+            echo cl_video_tag( $home_video, 
+              array(
+                "loop" => true,
+                "autoplay" => true,
+                "muted" => true,
+                "preload" => true,
+                "fallback_content" => "Your browser does not support HTML5 video tags",
+                "width" => 500,
+                "crop" => "fit",
+              )
+            ); 
+          ?>
         </div>
-        <div class="<?php echo $home_has_video ? '' : 'md:mx-4'; ?>">
-          <h2 class="text-base uppercase font-display mb-3 lg:text-md"><?php echo $home_vision['title']; ?></h2>
-          <div class="font-serif leading-normal text-sm lg:text-body"><?php echo $home_vision['description']; ?></div>
+      <?php elseif ( ! empty( $home_stats ) ) : ?>
+        <ul class="list-reset flex justify-center lg:justify-between -mx-3 py-8 lg:mb-4">
+          <?php foreach ( $home_stats as $i => $stat ) : ?>
+            <li class="text-center lg:text-left flex-1 px-3">
+              <p class="font-bold text-lg font-thin mb-1 lg:text-2xl" data-count-up><?php echo $stat['stat_value']; ?></p>
+              <p class="font-bold text-xs lg:text-sm"><?php echo $stat['stat_title']; ?></p>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      <?php endif; ?>
+      <?php if ( ! empty( $home_mission ) && ! empty( $home_vision ) ) : ?>
+        <div class="flex flex-col<?php echo $home_has_video ? '' : ' md:flex-row md:-mx-4 pt-4'; ?>">
+          <div class="mb-8 <?php echo $home_has_video ? '' : 'md:mb-0 md:mx-4'; ?>">
+            <h2 class="text-base uppercase font-display mb-3 lg:text-md"><?php echo $home_mission['title']; ?></h2>
+            <div class="font-serif leading-normal text-sm lg:text-body"><?php echo $home_mission['description']; ?></div>
+          </div>
+          <div class="<?php echo $home_has_video ? '' : 'md:mx-4'; ?>">
+            <h2 class="text-base uppercase font-display mb-3 lg:text-md"><?php echo $home_vision['title']; ?></h2>
+            <div class="font-serif leading-normal text-sm lg:text-body"><?php echo $home_vision['description']; ?></div>
+          </div>
         </div>
-      </div>
-    <?php endif; ?>
+      <?php endif; ?>
+    </div>
   </div>
 </section>
 <?php if ( ! empty( $home_ministries ) ) : ?>

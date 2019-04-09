@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'century-gothic';
   src: url('../fonts/century-gothic-regular.ttf');
-  src: url('../fonts/century-gothic-regular.ttf') format('truetype');
+  src: local('Century Gothic'),
+    url('../fonts/century-gothic-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -9,7 +10,8 @@
 @font-face {
   font-family: 'century-gothic';
   src: url('../fonts/century-gothic-bold.ttf');
-  src: url('../fonts/century-gothic-bold.ttf') format('truetype');
+  src: local('Century Gothic Bold'),
+    url('../fonts/century-gothic-bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
@@ -17,7 +19,8 @@
 @font-face {
   font-family: 'league-spartan';
   src: url('../fonts/league-spartan-bold.otf');
-  src: url('../fonts/league-spartan-bold.otf') format('opentype');
+  src: local('League Spartan'),
+    url('../fonts/league-spartan-bold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }

@@ -14,7 +14,7 @@ $donate_stats = get_field( 'donate_stats', 'options');
 
 ?>
 
-<section class="mt-nav flex flex-col lg:flex-row lg:items-end wrapper py-8 lg:pt-jumbo mb-8">
+<section class="mt-nav flex flex-col lg:flex-row lg:items-end wrapper py-8 lg:pt-jumbo mb-8" data-fade-in>
   <div class="lg:w-1/2 lg:pr-8 flex-no-shrink">
     <h2 class="donate-title font-bold font-display uppercase py-8"><?php echo $donate_title; ?></h2>
     <aside class="border-l-4 border-grey pl-6 mb-8 lg:mb-0">
@@ -41,7 +41,7 @@ $donate_stats = get_field( 'donate_stats', 'options');
     <div><a href=""></a><a href=""></a></div>
   </div>
 </section>
-<section id="ministries" class="py-8 lg:py-jumbo wrapper">
+<section id="ministries" class="py-8 lg:py-jumbo wrapper" data-fade-in>
   <h3 class="uppercase font-display font-bold text-center text-lg lg:text-2xl pt-4 pb-8">Our Ministries</h3>
   <?php if ( have_posts() ) : ?>
     <ul class="flex flex-col md:flex-row md:flex-wrap list-reset md:-mx-2">

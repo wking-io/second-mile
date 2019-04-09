@@ -16,6 +16,26 @@
   font-size: 25rem;
 }
 
+@keyframes expandOut {
+  from {
+    transform: translate(1.5rem, 1.5rem);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes expandBack {
+  from {
+    transform: translate(-1.5rem, -1.5rem);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
 .stack-box {
   position: relative;
   max-width: 300px;
@@ -33,6 +53,7 @@
     position: relative;
     z-index: 3;
     border-radius: 1rem;
+    transform: translate(1.5rem, 1.5rem);
   }
 
   &:before,
@@ -55,6 +76,15 @@
     left: 1.5rem;
     top: 3rem;
     z-index: 1;
+    transform: translate(-1.5rem, -1.5rem);
+  }
+
+  &.showing > .stack-box__content {
+    animation: 500ms expandOut cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  &.showing:after {
+    animation: 500ms expandBack cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
 }
 

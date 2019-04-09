@@ -14,7 +14,7 @@ $category_color = secondmile_get_color( $category->slug );
 ?>
 
 <?php if ( have_posts() ) : ?>
-  <section class="wrapper mt-nav pt-jumbo pb-8">
+  <section class="wrapper mt-nav pt-jumbo pb-8" data-fade-in>
     <h3 class="text-<?php echo $category_color; ?> uppercase font-display font-bold mb-4 lg:text-md"><?php echo $category->name; ?></h3>
     <h2 class="font-display uppercase font-bold text-xl leading-normal mb-6 md:text-3xl lg:text-4xl md:w-4/5"><?php echo $category_title; ?></h2>
     <p class="leading-normal border-l-4 border-grey pl-4 text-md md:text-lg md:w-4/5 lg:w-3/5 mb-8"><?php echo $category_subtitle; ?></p>
@@ -39,7 +39,7 @@ $category_color = secondmile_get_color( $category->slug );
       <div class="general-content <?php echo $category_has_video ? '' : 'md:columns-2 md:column-gap-8'; ?>"><?php echo $category_description; ?></div>
     </div>
   </section>
-  <section class="wrapper pt-8 md:pt-jumbo pb-jumbo">
+  <section class="wrapper pt-8 md:pt-jumbo pb-jumbo" data-fade-in>
     <h3 class="uppercase font-display font-bold text-center text-lg md:text-xl lg:text-2xl mb-8 md:pb-4 lg:pb-8"><?php echo $category->name; ?> Ministries</h3>
     <ul class="list-reset flex flex-col md:flex-row md:flex-wrap md:-mx-4">
       <?php while ( have_posts() ) : the_post(); ?>

@@ -21,7 +21,7 @@ $ministry_bottom_donate_text = get_field( 'bottom_donate_button_text' );
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-  <section class="mt-nav flex flex-col lg:flex-row lg:items-center lg:pb-jumbo lg:py-8">
+  <section class="mt-nav flex flex-col lg:flex-row lg:items-center lg:pb-jumbo lg:py-8" data-fade-in>
     <div class="mb-4 sm:mb-8 lg:w-1/2 lg:mr-8 lg:mb-0 flex flex-col lg:flex-col-reverse lg:justify-end lg:flex-no-shrink">
       <div class="aspect-4:3 overflow-hidden sm:mb-8 lg:mb-0"><img class="w-full absolute pin-t pin-l" src="<?php echo $ministry_image['url']; ?>" alt=""></div>
     </div>
