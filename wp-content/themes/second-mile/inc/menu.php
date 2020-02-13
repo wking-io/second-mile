@@ -54,7 +54,7 @@ class Primary_Menu extends Walker_Nav_Menu {
 			$output .= '</a>';
 		else :
 			$output .= '</span>';
-        endif;
+    endif;
 
 		if ( 0 == $depth && in_array( 'menu-item-has-children', $classes ) ) :
 			$output .= '<svg class="dropdown-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="dropdown-icon__fill" fill-rule="evenodd" clip-rule="evenodd" d="M1.41421 4.24264L0 5.65685L5.65685 11.3137L11.3137 5.65685L9.89949 4.24264L5.65685 8.48528L1.41421 4.24264Z" /></svg>';

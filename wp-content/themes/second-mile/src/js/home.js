@@ -1,8 +1,9 @@
 function countUp(el, total) {
-  const regex = new RegExp('[^$][0-9]*.?[0-9]*', 'g');
+  const regex = new RegExp('(\\$?)([0-9]*.?[0-9]*)([a-zA-z]?)');
   const original = el.innerHTML;
-  const [number, money] = original.match(regex);
-  el.innerHTML = `$0${money}`;
+
+  const [ _, sign, amount, shorthand ] = original.match(regex);
+  el.innerHTML = `${sign.length > 0 ? sign : ''}0${shorthand.length > 0 ? shorthand : ''}`;
 
   return function countIt(count, done = false) {
     if (done) {
@@ -10,8 +11,8 @@ function countUp(el, total) {
       return true;
     } else {
       const percentage = count / total;
-      const step = (number * percentage).toFixed(1);
-      el.innerHTML = `$${step}${money}`;
+      const step = (amount * percentage).toFixed(1);
+      el.innerHTML = `${sign.length > 0 ? sign : ''}${step}${shorthand.length > 0 ? shorthand : ''}`;
       return count + 1;
     }
   };
@@ -19,7 +20,7 @@ function countUp(el, total) {
 
 const counters = document.querySelectorAll('[data-count-up]');
 
-counters.forEach(counter => {
+counters.forEach((counter) => {
   const limit = 200;
   const loadedCount = countUp(counter, limit);
   let count = 0;
@@ -38,7 +39,7 @@ function stack(box) {
   return function(e) {
     if (box) {
       const { top } = box.getBoundingClientRect();
-      if (window.innerHeight - top > 350) {
+      if (window.innerHeight - top > 30) {
         box.classList.add('showing');
       }
     }
