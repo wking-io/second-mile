@@ -1,3 +1,1 @@
-const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
-
-export default compose;
+export const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));

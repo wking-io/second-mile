@@ -48,7 +48,7 @@ $category_color = secondmile_get_color( $category->slug );
         $ministry_excerpt = get_field( 'ministry_excerpt' );
       ?>
         <li class="w-full md:w-1/2 md:px-4 mb-8">
-          <div class="mb-8 aspect-5:3 overflow-hidden"><img class="absolute pin-t pin-l w-full" src="<?php echo $ministry_image['sizes']['medium_large']; ?>" alt=""></div>
+          <a class="block mb-8 aspect-5:3 overflow-hidden" href="<?php the_permalink(); ?>"><img class="absolute pin-t pin-l w-full" src="<?php echo $ministry_image['sizes']['medium_large']; ?>" alt=""></a>
           <h4 class="font-display font-bold text-md uppercase mb-2"><?php the_title(); ?></h4>
           <div class="font-serif text-body leading-normal mb-4"><?php echo $ministry_excerpt; ?></div>
           <p class="mb-6"><a class="font-bold uppercase text-<?php echo $category_color; ?> hover:no-underline" href="<?php the_permalink(); ?>">Learn More</a></p>

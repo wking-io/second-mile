@@ -44,8 +44,8 @@
             "key": "field_5c4b4caae8e31",
             "label": "Video",
             "name": "home_video",
-            "type": "text",
-            "instructions": "To fill out this field follow these steps:\r\n\r\n1. Go to the Cloudinary Media Library > Videos here: http:\/\/turnerbatson.test\/wp-admin\/admin.php?page=cloudinary-image-management-and-manipulation-in-the-cloud-cdn%2Flibrary.php\r\n2. Click into the edit page for the video you want to add\r\n3. Copy the name of the video in the top left\r\n4. Paste the name of the video below",
+            "type": "oembed",
+            "instructions": "Paste the video url from Vimeo",
             "required": 0,
             "conditional_logic": [
                 [
@@ -61,11 +61,40 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "width": "",
+            "height": ""
+        },
+        {
+            "key": "field_5e4d8a483cb8f",
+            "label": "Video Thumbnail",
+            "name": "video_thumbnail",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c4b4c91e8e30",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5c868d838e1aa",
@@ -396,5 +425,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1552322099
+    "modified": 1582140067
 }

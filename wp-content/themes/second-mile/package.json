@@ -13,8 +13,9 @@
     "eslint": "./node_modules/.bin/eslint"
   },
   "dependencies": {
+    "@vimeo/player": "2.10.0",
     "include-media": "1.4.9",
-    "jquery": "^3.2.1",
+    "jquery": "3.4.1",
     "normalize.css": "^7.0.0",
     "slick-carousel": "^1.8.1"
   },

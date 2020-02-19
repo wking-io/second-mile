@@ -45,23 +45,23 @@ $home_ministries     = array(
         <p class="font-bold lg:text-sm"><cite class="roman"><?php echo $verse_location; ?></cite></p>
       </aside>
     <?php endif; ?>
-    <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row md:py-8' : ''; ?> mb-8 lg">
-      <?php if ( $home_has_video ) : ?>
+    <div class="hero__content flex flex-col<?php echo $home_has_video ? ' md:flex-row md:py-8 items-center' : ''; ?> mb-8 lg">
+      <?php if ( $home_has_video ) : 
+        $thumb = get_field('video_thumbnail'); ?>
         <div class="hero__video md:w-1/2 mb-8 md:mb-0 md:mr-8 rounded overflow-hidden flex-no-shrink">
-          <?php 
-            echo cl_video_tag( $home_video, 
-              array(
-                "loop" => true,
-                "autoplay" => true,
-                "muted" => true,
-                "preload" => true,
-                "fallback_content" => "Your browser does not support HTML5 video tags",
-                "width" => 500,
-                "crop" => "fit",
-              )
-            ); 
-          ?>
+          <button data-popup-action aria-controls="the-video">
+            <img src="<?php echo $thumb['url']; ?>" alt="video thumbnail">
+            <svg class="play-button" width="43" height="48" viewBox="0 0 43 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M41 20.5359C43.6667 22.0755 43.6667 25.9245 41 27.4641L6.5 47.3827C3.83333 48.9223 0.5 46.9978 0.5 43.9186V4.08141C0.5 1.00221 3.83333 -0.922287 6.5 0.617313L41 20.5359Z" fill="white"/>
+            </svg>
+          </button>
         </div>
+        <aside id="the-video" data-popup data-popup-hidden="true">
+          <div aria-controls="the-video" data-popup-action></div>
+          <div>
+            <?php echo $home_video; ?>
+          </div>
+        </aside>
       <?php elseif ( ! empty( $home_stats ) ) : ?>
         <ul class="list-reset flex justify-center lg:justify-between -mx-3 py-8 lg:mb-4">
           <?php foreach ( $home_stats as $i => $stat ) : ?>
