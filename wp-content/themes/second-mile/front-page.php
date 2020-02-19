@@ -56,12 +56,6 @@ $home_ministries     = array(
             </svg>
           </button>
         </div>
-        <aside id="the-video" data-popup data-popup-hidden="true">
-          <div aria-controls="the-video" data-popup-action></div>
-          <div>
-            <?php echo $home_video; ?>
-          </div>
-        </aside>
       <?php elseif ( ! empty( $home_stats ) ) : ?>
         <ul class="list-reset flex justify-center lg:justify-between -mx-3 py-8 lg:mb-4">
           <?php foreach ( $home_stats as $i => $stat ) : ?>
@@ -157,5 +151,14 @@ $home_ministries     = array(
 
   </div>
 </section>
+
+<?php if ( $home_has_video ) : ?>
+  <aside id="the-video" data-popup data-popup-hidden="true">
+    <div class="popup-bg" aria-controls="the-video" data-popup-action></div>
+    <div class="video-content">
+      <?php echo $home_video; ?>
+    </div>
+  </aside>
+<?php endif; ?>
 
 <?php get_footer();

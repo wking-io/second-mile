@@ -1,35 +1,22 @@
 import Player from '@vimeo/player';
-import { addClass, removeClass, hasClass } from './modules/classlist';
 import { dom, domAll } from './modules/dom';
-import { wrapEvent, eventOn } from './modules/event';
-import { compose } from './modules/compose';
+import togglePopup from './modules/popup';
 
-const pauseLoop = (el) => () => el.pause();
-const playLoop = (el) => () => el.play();
+const theVideo = dom('[data-popup] iframe');
+if (!theVideo.hasOwnProperty('error')) {
+  const player = new Player(theVideo);
+  const popupBtns = domAll('[data-popup-action]');
 
-// Open Bio Video
-const showVideo = wrapEvent(addClass, [ 'the-video--open', dom('.the-video') ]);
-eventOn('click', compose(pauseLoop(dom('.promo-video__bg')), showVideo), domAll('.open-video'));
-
-// Pause Bio Video
-const pausePlayer = (el) => {
-  const player = new Player(el);
-  player.pause();
-  return player;
-};
-
-// Close Bio Video
-const hideVideo = (e) => {
-  if (hasClass('the-video', e.target)) {
-    removeClass('the-video--open', dom('.the-video'));
-    pausePlayer(dom('.the-video__wrapper iframe'));
-  }
-  return e;
-};
-
-const theVideo = dom('.the-video');
-if (theVideo) {
-  eventOn('click', compose(playLoop(dom('.promo-video__bg')), hideVideo), theVideo);
+  popupBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const state = togglePopup(e);
+      if (state) {
+        player.pause();
+      } else {
+        player.play();
+      }
+    });
+  });
 }
 
 function countUp(el, total) {
