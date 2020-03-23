@@ -7,7 +7,6 @@ $verse_text          = get_field('company_verse_text', 'options');
 $verse_location      = get_field('company_verse_location', 'options');
 $home_title          = get_field('home_title');
 $home_has_video      = get_field('home_has_video');
-$home_video          = get_field('home_video');
 $home_stats          = get_field('home_stats');
 $home_mission        = get_field('mission');
 $home_vision         = get_field('vision');
@@ -152,7 +151,8 @@ $home_ministries     = array(
   </div>
 </section>
 
-<?php if ( $home_has_video ) : ?>
+<?php if ( $home_has_video ) :
+  $home_video = get_field('home_video'); ?>
   <aside id="the-video" data-popup data-popup-hidden="true">
     <div class="popup-bg" aria-controls="the-video" data-popup-action></div>
     <div class="video-content">

@@ -16,7 +16,7 @@ if ( ! function_exists( 'secondmile_scripts' ) ) :
 		wp_enqueue_script( 'main' );
 		
 		if ( is_front_page() ) :
-			wp_register_script( 'home', get_template_directory_uri() . '/assets/js/home.js', array(), '1.1.0', true );
+			wp_register_script( 'home', get_template_directory_uri() . '/assets/js/home.js', array(), '1.2.0', true );
 			wp_enqueue_script( 'home' );
 		endif;
 
@@ -58,7 +58,7 @@ if ( ! function_exists( 'secondmile_styles' ) ) :
 			wp_register_style( 'sm-google-fonts', 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Oswald:400,700', false );
 			wp_enqueue_style( 'sm-google-fonts' );
 
-	    wp_register_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.1.0', false );
+	    wp_register_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.2.0', false );
 	    wp_enqueue_style( 'main' );
 
 	}
