@@ -9,6 +9,7 @@ get_header();
 
 $ministry_subtitle = get_field( 'ministry_subtitle' );
 $ministry_image = get_field( 'ministry_image' );
+$ministry_has_video = get_field( 'ministry_has_video' );
 $ministry_donation_url = get_field( 'donation_link_url' );
 $ministry_donation_text = get_field( 'donation_link_text' );
 $ministry_stat = get_field( 'ministry_stat' );
@@ -23,7 +24,18 @@ $ministry_bottom_donate_text = get_field( 'bottom_donate_button_text' );
 
   <section class="mt-nav flex flex-col lg:flex-row lg:items-center lg:pb-jumbo lg:py-8" data-fade-in>
     <div class="mb-4 sm:mb-8 lg:w-1/2 lg:mr-8 lg:mb-0 flex flex-col lg:flex-col-reverse lg:justify-end lg:flex-no-shrink">
-      <div class="aspect-4:3 overflow-hidden sm:mb-8 lg:mb-0"><img class="w-full absolute pin-t pin-l" src="<?php echo $ministry_image['url']; ?>" alt=""></div>
+      <div class="ministry-video aspect-4:3 overflow-hidden sm:mb-8 lg:mb-0">
+        <?php if ($ministry_has_video) : ?>
+          <button class="w-full absolute pin-t pin-l" data-popup-action aria-controls="the-video">
+            <img src="<?php echo $ministry_image['url']; ?>" alt="">
+            <svg class="play-button" width="43" height="48" viewBox="0 0 43 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M41 20.5359C43.6667 22.0755 43.6667 25.9245 41 27.4641L6.5 47.3827C3.83333 48.9223 0.5 46.9978 0.5 43.9186V4.08141C0.5 1.00221 3.83333 -0.922287 6.5 0.617313L41 20.5359Z" fill="white"/>
+            </svg>
+          </button>
+        <?php else : ?>
+          <img class="w-full absolute pin-t pin-l" src="<?php echo $ministry_image['url']; ?>" alt="">
+        <?php endif; ?>
+      </div>
     </div>
     <div class="wrapper lg:px-8 lg:max-w-6xl mx-auto">
       <div class="wrapper lg:w-full lg:max-w-3xl lg:ml-0 lg:mr-auto my-8"><div class="w-4/5 max-w-4xl lg:max-w-full lg:w-full"><?php echo secondmile_pp_logo( 'vertical' ); ?></div></div>
@@ -68,6 +80,16 @@ $ministry_bottom_donate_text = get_field( 'bottom_donate_button_text' );
       </ul>
       <p class="mb-8"><a class="button-outline w-full sm:w-4/5 md:w-1/2 mx-auto" href="<?php echo $ministry_donation_url; ?>"><?php echo $ministry_bottom_donate_text; ?></a></p>
     </section>
+  <?php endif; ?>
+
+  <?php if ( $ministry_has_video ) :
+    $ministry_video = get_field( 'ministry_video' ); ?>
+    <aside id="the-video" data-popup data-popup-hidden="true">
+      <div class="popup-bg" aria-controls="the-video" data-popup-action></div>
+      <div class="video-content">
+        <?php echo $ministry_video; ?>
+      </div>
+    </aside>
   <?php endif; ?>
 
 <?php endwhile; else: ?>

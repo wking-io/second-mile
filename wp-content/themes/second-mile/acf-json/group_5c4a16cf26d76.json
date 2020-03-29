@@ -3,6 +3,49 @@
     "title": "SINGLE \/\/ Ministry \/\/ Parent Parties",
     "fields": [
         {
+            "key": "field_5e7fbfde6a555",
+            "label": "Has Video?",
+            "name": "ministry_has_video",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e7fbee8a6262",
+            "label": "Video",
+            "name": "ministry_video",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e7fbfde6a555",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
             "key": "field_5c8f361e5b2f5",
             "label": "Home Page Stats",
             "name": "home_page_stats",
@@ -279,5 +322,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1553063276
+    "modified": 1585430527
 }
